@@ -100,3 +100,11 @@ input:focus {
 .fruits::after {
   content: "과일 목록 끝";
 }
+
+input[readonly] {
+  background-color: red;
+}
+
+input[type="password"] {
+  color: red;
+}

@@ -1,13 +1,12 @@
 /* 실습 0 */
-/* .one {
+.one {
   height: 50px;
 }
 h3 {
   background-color: black;
   color: white;
-  width: fit-content; 
-  
-} */
+  width: fit-content;
+}
 
 /* 실습 1 */
 /* * {
@@ -18,14 +17,14 @@ h3 {
 span {
   background-color: red;
 }
-
+*/
 #first {
   background-color: blue;
 }
 
 .second {
   background-color: green;
-} */
+}
 
 /* 실습 2 */
 /* 야생의 사자 */
@@ -33,7 +32,7 @@ span {
   background-color: red;
 }
 /* 사파리 안의 사자 */
-.zoo .lion {
+.zoo.lion {
   background-color: greenyellow;
   font-weight: bold;
 }
@@ -80,4 +79,15 @@ input:focus {
 }
 .box::after {
   content: "빨리";
+}
+
+/* 실습 6 */
+input[disabled] {
+  background-color: red;
+}
+input[placeholder="이름"] {
+  background-color: orange;
+}
+input:not(input[placeholder]) {
+  background-color: blue;
 }
