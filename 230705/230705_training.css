@@ -1,4 +1,4 @@
-/* 실습 1 */
+/* 실습 0 */
 /* .one {
   height: 50px;
 }
@@ -9,7 +9,7 @@ h3 {
   
 } */
 
-/* 실습 2 */
+/* 실습 1 */
 /* * {
   color: white;
   background-color: gray;
@@ -27,4 +27,40 @@ span {
   background-color: green;
 } */
 
-/* 실습 3 */
+/* 실습 2 */
+/* 야생의 사자 */
+.zoo + .lion {
+  background-color: red;
+}
+/* 사파리 안의 사자 */
+.zoo .lion {
+  background-color: greenyellow;
+  font-weight: bold;
+}
+/* 호랑이 */
+#tiger {
+  background-color: yellow;
+}
+/* 사자 */
+.lion {
+  color: sienna;
+}
+/* 팬더 */
+#tiger + li {
+  background-color: skyblue;
+}
+/* 사육사 */
+.zoo li.lion ~ li {
+  background-color: orange;
+}
+
+/* 실습 */
+h1:hover {
+  color: red;
+}
+a:active {
+  background-color: blue;
+}
+input:focus {
+  background-color: orange;
+}

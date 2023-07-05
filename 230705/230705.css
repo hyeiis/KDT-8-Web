@@ -5,25 +5,66 @@
   background-color: lightgray;
 } */
 
-/* 전체 선택자 */
-* {
+/* 전체 선택자
+/* * {
+  color: red;
+} */
+
+/* 태그 선택자 */
+/* li {
+  color: rebeccapurple;
+} */
+
+/* span 태그는 블록 태그. 알아서 컨텐츠에 맞게 조정 */
+/* span {
+  background-color: brown;
+} */
+
+/* class 선택자 */
+/* .orange {
+  color: orange;
+} */
+
+/* id 선택자 */
+/* #orange {
+  color: blue;
+} */
+
+/* 일치 선택자 */
+span.orange {
   color: red;
 }
 
-/* 태그 선택자 */
-li {
-  color: rebeccapurple;
-}
-/* span 태그는 블록 태그. 알아서 컨텐츠에 맞게 조정 */
-span {
-  background-color: brown;
+/* 자식 선택자 */
+ul > .orange {
+  background-color: beige;
 }
 
-/* class 선택자 */
-.orange {
-  color: orange;
+/* 하위 선택자 */
+div .orange {
+  font-weight: bold;
 }
-/* id 선택자 */
-#orange {
-  color: blue;
+
+/* 인접 형제 선택자 */
+.orange + li {
+  font-size: 30px;
+}
+
+/* 일반 형제 선택자 */
+.orange ~ li {
+  color: purple;
+}
+
+/* hover 마우스 커서 올렸을 때 */
+a:hover {
+  color: red;
+}
+/* active: 마우스 클릭하고 있는 동안 */
+a:active {
+  background-color: black;
+  color: white;
+}
+/* focus: focus 되어 있을 때 */
+input:focus {
+  background-color: burlywood;
 }
