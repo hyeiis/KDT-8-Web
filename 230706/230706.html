@@ -65,12 +65,19 @@
         background-color: red;
       }
       .invisible {
-        /* visibility: hidden */
+        /*visibility: hidden; */
         background-color: orangered;
       }
       .opacity-0 {
-        /* opacity: 0 */
+        /* opacity: 0; */
         background-color: tomato;
+      }
+      .overflow {
+        width: 200px;
+        height: 200px;
+        font-size: 20px;
+        background-color: beige;
+        overflow: auto;
       }
     </style>
   </head>
@@ -122,9 +129,11 @@
       style="width: Calc(100vw-200px); height: 100vw; background-color: purple"
     ></div>
     <div class="square">original</div>
-    <div class="square d-none">d-none</div>
-    <div class="squre invisible">invisible</div>
-    <div class="squre opacity-0">opacity-0</div>
+    <div class="d-none">d-none</div>
+    <div class="invisible">invisible</div>
+    <div class="opacity-0">opacity-0</div>
     <div class="square">original</div>
+
+    <div class="overflow">abcdefghijklmnopqrstuvwxyz</div>
   </body>
 </html>
