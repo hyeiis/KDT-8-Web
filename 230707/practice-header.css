@@ -25,19 +25,18 @@ header {
   background-color: #ddd;
   padding: 0 20px;
   margin-bottom: 50px;
+  align-items: center;
 }
 /* header1 */
 .header1 {
   display: flex;
   /* flex-wrap: wrap; */
-  align-items: center;
   justify-content: space-between;
 }
 /* header2 */
 .header2 {
   display: flex;
   /* flex-wrap: wrap; */
-  align-items: center;
   justify-content: space-between;
 }
 .header2 ul {
@@ -49,15 +48,29 @@ header {
 .header3 {
   display: flex;
   /* flex-wrap: wrap; */
-  align-items: center;
   justify-content: space-between;
 }
-.menu-left {
+.header1 ul,
+.header3 ul,
+.header4 .menu-left ul {
+  width: 300px;
   display: flex;
+  justify-content: space-between;
 }
+
 /* header4 */
 .header4 {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+}
+.header4 .menu-left {
+  display: flex;
+  justify-content: space-between;
+}
+.menu-left > span {
+  width: 25%;
+}
+.menu-right {
+  display: flex;
   justify-content: space-between;
 }
