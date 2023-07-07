@@ -52,7 +52,8 @@ header {
 }
 .header1 ul,
 .header3 ul,
-.header4 .menu-left ul {
+.header4 .menu-left ul,
+.header4 .menu-right ul {
   width: 300px;
   display: flex;
   justify-content: space-between;
@@ -64,13 +65,16 @@ header {
   justify-content: space-between;
 }
 .header4 .menu-left {
+  width: 400px;
   display: flex;
   justify-content: space-between;
 }
 .menu-left > span {
   width: 25%;
 }
-.menu-right {
+.header4 .menu-right {
+  width: 180px;
+  /* width: 20%; */
   display: flex;
   justify-content: space-between;
 }
