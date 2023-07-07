@@ -58,7 +58,9 @@ header {
   display: flex;
   justify-content: space-between;
 }
-
+.header3 ul {
+  margin-left: 6.64px; /*logo와 login의 크기 차이로 인해 header2와 header3의 가운데가 맞지 않음 그래서 두 개의 너비의 차 만큼 margin-left해줌*/
+}
 /* header4 */
 .header4 {
   display: flex;
