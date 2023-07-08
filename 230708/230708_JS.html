@@ -5,8 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScript</title>
     <script>
-      console.log("hello JS World"); //콘솔창에 뜸
-      alert("msg"); //경고창
+      //   console.log("hello JS World"); //콘솔창에 뜸
+      //   alert("msg"); //경고창
+
+      /* var: 재선언 o, 재할당 o
+         let: 재선언 x, 재할당 o
+         const: 재선언 x, 재할당 x */
+      var a = "안녕"; //선언 + 할당
+      var a; //선언
+      a = "홍길동"; //할당
+      console.log(a);
+
+      //   let b;
+      //  b = "잘 가";
+      let b = "잘 가";
+      console.log(b);
+
+      // const: 재선언 재할당 x -> 선언과 동시에 할당을 해야함
+      const c = "바로 선언 + 할당";
+      console.log(c);
     </script>
   </head>
   <body></body>
