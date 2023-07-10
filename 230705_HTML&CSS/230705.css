@@ -74,7 +74,7 @@ input:focus {
   color: red;
 }
 
-/* last-child: 막내 요소인지 */
+/* last-child: 마지막 요소인지 */
 .fruits h3:last-child {
   text-decoration: overline;
 }
