@@ -1,0 +1,110 @@
+/* div {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  background-color: lightgray;
+} */
+
+/* 전체 선택자
+/* * {
+  color: red;
+} */
+
+/* 태그 선택자 */
+/* li {
+  color: rebeccapurple;
+} */
+
+/* span 태그는 블록 태그. 알아서 컨텐츠에 맞게 조정 */
+/* span {
+  background-color: brown;
+} */
+
+/* class 선택자 */
+/* .orange {
+  color: orange;
+} */
+
+/* id 선택자 */
+/* #orange {
+  color: blue;
+} */
+
+/* 일치 선택자 */
+span.orange {
+  color: red;
+}
+
+/* 자식 선택자 */
+ul > .orange {
+  background-color: beige;
+}
+
+/* 하위 선택자 */
+div .orange {
+  font-weight: bold;
+}
+
+/* 인접 형제 선택자 */
+.orange + li {
+  font-size: 30px;
+}
+
+/* 일반 형제 선택자 */
+.orange ~ li {
+  color: purple;
+}
+
+/* hover 마우스 커서 올렸을 때 */
+a:hover {
+  color: red;
+}
+/* active: 마우스 클릭하고 있는 동안 */
+a:active {
+  background-color: black;
+  color: white;
+}
+/* focus: focus 되어 있을 때 */
+input:focus {
+  background-color: burlywood;
+}
+
+/* first-child: 첫번째 요소인지 */
+.fruits span:first-child {
+  color: red;
+}
+
+/* last-child: 막내 요소인지 */
+.fruits h3:last-child {
+  text-decoration: overline;
+}
+.fruits p:last-child {
+  color: green;
+}
+
+/* nth-child: n번째 요소인지 . ()에 2n을 넣으면 짝수만. 2n+1을 넣으면 홀수번째만*/
+.fruits div:nth-child(3) {
+  color: green;
+}
+
+/* not: 해당 선택자가 아닌 모든 요소*/
+.fruits *:not(span) {
+  background-color: aquamarine;
+}
+
+/* ::before - 선택자 내부 맨 앞에 가상 요소 삽입*/
+.fruits::before {
+  content: "과일 목록 시작";
+}
+/* ::after - 선택자 내부 맨 뒤에 가상요소 삽입*/
+.fruits::after {
+  content: "과일 목록 끝";
+}
+
+input[readonly] {
+  background-color: red;
+}
+
+input[type="password"] {
+  color: red;
+}
