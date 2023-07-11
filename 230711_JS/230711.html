@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>230711</title>
+
+    <script>
+      const msg = "안녕하세요";
+      const name = "길동";
+
+      // 안녕하세요 길동님
+      console.log(msg);
+      console.log(name);
+      console.log("님");
+
+      // + : 변수를 문자료 변환 후 출력
+      console.log(msg + name + "님");
+
+      console.log(msg, name, "님");
+      // 백틱(`): 문자를 쓰다가 변수 쓸 수 있다.
+      console.log(`${msg} ${name}님`);
+
+      console.log("------Array------");
+      let colors = ["red", "orange", "yellow", "green"];
+      console.log(colors);
+      // 색상 : Array
+      console.log(`색상 : ${colors}`);
+      // console.log("색상 : " + colors);
+      // console.log("색상 : ", colors);
+
+      let list = [1, 2, 3, 4, 5];
+      console.log(list[1]); // 1번째 요소
+      console.log(list.length); // 배열 길이
+      list.push(6); // 마지막 요소에 6 추가
+      console.log(list);
+      list.pop(); // 마지막 요소 반환 후 제거
+      console.log(list);
+
+      console.log("------Object------");
+      let cat = {
+        name: "나비",
+        age: 1,
+        isCute: true,
+        meow: function () {
+          return "야옹";
+        },
+      };
+
+      console.log(cat);
+      console.log(cat.name);
+      console.log(cat.age);
+      console.log(cat.meow());
+
+      console.log("------형 변환------");
+      //   let mathScore = prompt("수학 점수를 입력하세요");
+      //   let engScore = prompt("영어 점수를 입력하세요");
+
+      //   let avg = (mathScore + engScore) / 2;
+
+      //   console.log(avg);
+
+      let num = 456;
+      console.log(typeof num); //numver
+      let num1 = String(num);
+      console.log(typeof num1); //string
+      let num2 = num.toString();
+      console.log(typeof num2); //string
+      //String()과 toString()의 차이: String은 null과 undefined -> 문제 x. toString()은 null과 undefined -> 문제 o
+
+      console.log(1 == "1");
+      console.log(1 === "1");
+      console.log(2 ** 3);
+
+      console.log("------함수------");
+      // 함수 선언문
+      function functionName() {
+        console.log("안녕하세요");
+      } // functionName이라는 함수를 선언한 것
+      functionName(); // 선언했으면 실행을 해주어야 함.
+
+      // 함수 표현식
+      let functionName2 = function () {
+        console.log("안녕하세요");
+      };
+      functionName2();
+
+      function hello(name, age) {
+        console.log(name + "님 안녕하세요");
+        console.log(age + "세");
+
+        return age + 10;
+        return age + 20; // return을 한 번 하면 아래 코드는 동작되지 않음. return은 하나만 써야 함
+      }
+      let result = hello("홍길동", 10);
+      console.log("result: ", result);
+      let a = 1;
+      hello(a); // a의 값이 매개면수 name에 들어감
+
+      console.log("------onclick------");
+      //   function test() {
+      //     alert("클릭했습니다.");
+      //   }
+      //   function test2(obj) {
+      //     console.log(obj);
+      //     console.log(obj.value);
+      //   }
+
+      let test = "a";
+      if (test == "a") console.log("a입니다.");
+      else if (test == "b") console.log("b입니다.");
+      else console.log("a와 b 모두 아닙니다.");
+
+      switch (test) {
+        case "a":
+          console.log("a입니다.");
+          break;
+        case "b":
+          console.log("b입니다.");
+        default:
+          console.log("a와 b 모두 아닙니다.");
+          break;
+      }
+
+      //삼항 연산자 -> 조건식 ? 참 : 거짓 ;
+
+      //for 문
+      for (let i = 0; i < 10; i++) {
+        console.log("i: ", i);
+      }
+
+      // while 문
+      //1을 입력하면 메뉴 보여주고, 2를 입력하면 메뉴 출력
+      //   let flag = true;
+      //   while (flag) {
+      //     let ab = prompt("끝내고 싶으시면 exit을 입력하세요.");
+      //     if (ab == "exit") {
+      //       flag = false;
+      //     } else {
+      //       console.log("입력한 값은 " + ab + "입니다.");
+      //     }
+      //   }
+
+      //break / continue
+      for (let i = 0; i < 10; i++) {
+        console.log(i);
+        if (i == 5) continue;
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="test()">button</button>
+    <!-- <input type="text" onchange="test2(this)" /> -->
+    <!-- <input type="text" value="abcd" onkeyup="test2(this)" /> 아이디 중복검사 이럴 때 사용 가능-->
+    <!-- <input type="text" value="abcd" onkeydown="test2(this)" /> -->
+  </body>
+</html>
