@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>표준 객체</title>
+    <script>
+      // 표준객체: 자바스크립트에 기본적으로 내장되어 있는 것들
+      // String, Number, Array
+
+      // Date: javascript에서 시간과 날짜에 대한 정보를 얻기 위해 사용되는 객체. 초기화(new) 시켜야 사용 가능
+      // new Date(); 현재 시간 가져옴
+      // new Date(년, 월, 일, 시, 분, 초, 밀리초); parameter로 넣은 특정 시간 가져옴
+      // month는 배열에서 가져옴. month = 0번째에 1월 ... 11번째에 12월
+      let date = new Date(); // 초기화할 때 Date에 값(숫자)을 넣으면 기본 시간인 1970년 1월 1일 0시부터 mili second만큼 지난 날짜를 출력
+      console.log(Date.now()); // 기준 시간으로부터 지금까지 지난 mili sec 출력됨. 초기화하지 않고도 사용가능
+
+      // 초기화하고 나서 사용 가능
+      console.log(date.getFullYear()); // 초기화한 시간의 년도
+      console.log(date.getDate()); // 초기화한 시간의 일자
+      console.log(date.getMonth()); // 초기화한 시간의 월 ... 1월 0, 2월 1 ... 12월 11
+      console.log(date.getDay()); // 초기화한 시간의 요일 .. 일요일 0, 월요일 1 ... 토요일 6
+      console.log(date.getTime()); // 초기화한 시간이 기준 시간으로부터 얼마나 지났는지 mili sec으로 보여줌
+      console.log(date.getHours()); // 현재의 시간(시)
+      console.log(date.getMinutes()); // 현재의 시간(분)
+      console.log(date.getSeconds()); // 현재의 시간(초)
+
+      // yyyy-mm-dd
+      let year = date.getFullYear();
+      let month = date.getMonth() + 1;
+      let day = date.getDate();
+
+      console.log(`${year}-${month}-${day}`);
+
+      // Math: 수학적인 계산
+      console.log(Math.PI);
+      console.log(Math.E);
+      console.log(Math.SQRT2);
+
+      // Math의 메소드
+      // 1. min: 최솟값
+      console.log(Math.min(45, 2, 0, -3, 1));
+      // 2. max: 최대값
+      console.log(Math.max(45, 2, 0, -3, 1));
+      // 3. random: 랜덤한 수 추출
+      console.log(Math.random()); //아무것도 넣지 않으면 0~1까지
+      //   let a = Math.random() * (max-min) + min;
+      console.log(Math.random() * 9 + 1);
+      // 4. round, floor, ceil
+      // - round(): 반올림
+      console.log(Math.round(1.8));
+      // - floor(): 내림. 소수점 아래 숫자 버리고 남은 정수
+      console.log(Math.floor(1.9));
+      // - ceil(): 올림. 소수점 아래 버리고 정수에 +1
+      console.log(Math.ceil(1.9));
+    </script>
+  </head>
+  <body></body>
+</html>
