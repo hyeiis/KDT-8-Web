@@ -47,7 +47,16 @@
         let writer = document.getElementById("writer").value;
         let content = document.getElementById("content").value;
         let date = new Date();
-        let dateText = date.getFullYear() + "-" + date.getMonth() + 1;
+        let dateText =
+          date.getFullYear() +
+          "-" +
+          (date.getMonth() + 1) +
+          "-" +
+          date.getDate() +
+          " " +
+          date.getHours() +
+          ":" +
+          date.getMinutes();
 
         // 1. createElement 사용
         let tr = document.createElement("tr");
