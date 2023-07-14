@@ -13,8 +13,14 @@
       // $? $(선택자).함수();
       // $() : parameter로 선택자를 전달받아 특정 HTML 요소를 선택한다. -> 선택된 요소는 jquery 객체
       // 함수 : jquery 메소드
-      function setValue() {}
-      function getValue() {}
+      function setValue() {
+        $("input").val("설정!!!!");
+      }
+      function getValue() {
+        let value = $("input").val();
+        // let value = document.querySelector('input').value;
+        alert(value);
+      }
     </script>
     <style>
       div {
@@ -25,7 +31,7 @@
         background-color: crimson;
       }
       .div2 {
-        background-color: yellow;
+        background-color: blanchedalmond;
       }
     </style>
   </head>
