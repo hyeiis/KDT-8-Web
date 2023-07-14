@@ -17,6 +17,7 @@
       // window.addEventListener("load", function () {
       //   console.log("로드 완료 0");
       // });
+      // 아래 3개의 이벤트는 모두 DOM가 불러와진 후에 실행된다.
       $(window).ready(function () {
         console.log("로드 완료 1");
       });
@@ -26,7 +27,8 @@
       $(function () {
         console.log("로드 완료 3");
       });
-      // $().on("") = addEventListener("")
+
+      // $().on("이벤트명", 콜백함수) = addEventListener("이벤트명", 콜백함수)
       $("button").on("click", function () {
         alert("클릭");
       });
@@ -37,7 +39,8 @@
         console.log(e.currentTarget);
         console.log(e.currentTarget.value);
       });
-      // on 함수를 이용하지 않고 바로 쓸 수 있는 이벤트 함수: clik, scroll, mouseover, hover, keyup, keydown
+      // on 함수를 이용하지 않고 바로 쓸 수 있는 이벤트 함수: click, scroll, mouseover, hover, keyup, keydown
+      // $().on("click", 콜백함수) == $().click(콜백함수)
     </script>
   </body>
 </html>
