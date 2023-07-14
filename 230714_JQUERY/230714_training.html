@@ -26,7 +26,34 @@
       .box {
         width: 100px;
         height: 100px;
-        background-color: crimson;
+        border: 1px solid black;
+      }
+      /* .red {
+        background-color: red;
+      }
+      .orange {
+        background-color: orange;
+      }
+      .yellow {
+        background-color: yellow;
+      }
+      .green {
+        background-color: green;
+      }
+      .red {
+        background-color: red;
+      }
+      .red {
+        background-color: red;
+      }
+      .red {
+        background-color: red;
+      } */
+      .css1 {
+        background-color: red;
+      }
+      .css2 {
+        background-color: orange;
       }
     </style>
     <script>
@@ -43,8 +70,23 @@
         $("img").attr("src", "./image/peach.jpeg");
       }
 
+      let cssNum = 1;
       function changeColor() {
-        let colors = [
+        // hasClass 이용
+        // if ($("div").hasClass("red")) $(".box").switchClass("red", "orange");
+        // else if ($("div").hasClass("orange"))
+        //   $(".box").switchClass("orange", "yellow");
+        // else if ($("div").hasClass("yellow"))
+        //   $(".box").switchClass("yellow", "green");
+
+        // 전역변수 이용해 색상 변경
+        // css1~7 선언
+        if (cssNum == 7) $(".box").switchClass(`css${cssNum}`, `css1`);
+        else $(".box").switchClass(`css${cssNum}`, `css${cssNum + 1}`);
+        cssNum++;
+
+        // list 이용
+        var colors = [
           "red",
           "orange",
           "yellow",
@@ -67,8 +109,6 @@
       <button onclick="peach()">복숭아</button>
     </div>
 
-    <div class="div2">
-      <div class="box" onclick="changeColor()"></div>
-    </div>
+    <div class="box" onclick="changeColor()"></div>
   </body>
 </html>
