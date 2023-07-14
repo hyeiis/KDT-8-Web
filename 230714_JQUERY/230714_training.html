@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>230714 실습</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.js"
+      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+      crossorigin="anonymous"></script>
+    <script src="../jquery-ui-1.13.2.custom/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../jquery-ui-1.13.2.custom/jquery-ui.css" />
+    <style>
+      .div1 {
+        text-align: center;
+      }
+      button {
+        background-color: black;
+        color: white;
+        border-radius: 0px;
+      }
+      img {
+        width: 250px;
+        height: 250px;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: crimson;
+      }
+    </style>
+    <script>
+      function apple() {
+        $("img").attr("src", "./image/apple.jpg");
+      }
+      function banana() {
+        $("img").attr("src", "./image/banana.jpg");
+      }
+      function grape() {
+        $("img").attr("src", "./image/grape.jpeg");
+      }
+      function peach() {
+        $("img").attr("src", "./image/peach.jpeg");
+      }
+
+      function changeColor() {
+        let colors = [
+          "red",
+          "orange",
+          "yellow",
+          "green",
+          "blue",
+          "navy",
+          "purple",
+        ];
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="div1">
+      <img alt="" />
+      <br />
+      <button onclick="apple()">사과</button>
+      <button onclick="banana()">바나나</button>
+      <button onclick="grape()">포도</button>
+      <button onclick="peach()">복숭아</button>
+    </div>
+
+    <div class="div2">
+      <div class="box" onclick="changeColor()"></div>
+    </div>
+  </body>
+</html>
