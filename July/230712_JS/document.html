@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        color: white;
+      }
+      .div1 {
+        background-color: crimson;
+      }
+      .div2 {
+        background-color: cornflowerblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div1">1</div>
+    <div class="div2">2</div>
+    <div class="div1">3</div>
+    <div class="div2">4</div>
+    <div class="div1" id="div2">5</div>
+
+    <script>
+      console.log(document);
+      console.log(document.title);
+      console.log(document.URL);
+
+      // getElementById
+      console.log("------getElementById()------");
+      console.log(document.getElementById("div2"));
+
+      // getElementsByClassName - parameter로 보내는 클래스명을 가지고 있는 모든 요소 가져옴
+      console.log("------getElementByClassName()------");
+      console.log(document.getElementsByClassName("div2"));
+
+      // querySelector(선택자) - 위에서부터 선택자에 일치하는 요소 하나만 가져옴
+      console.log("------querySelector()------");
+      console.log(document.querySelector(".div2"));
+      // querySelectorAll - 선택자에 일치하는 모든 요소를 배열 형태로 가져온다.
+      console.log(document.querySelectorAll(".div2"));
+      console.log(document.querySelectorAll(".div2")[1]);
+    </script>
+  </body>
+</html>

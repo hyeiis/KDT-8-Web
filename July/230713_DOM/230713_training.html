@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>230713 실습</title>
+
+    <script>
+      function calc() {
+        let value1 = document.getElementById("value1").value;
+        let value2 = document.getElementById("value2").value;
+        value1 = Number(value1);
+        value2 = Number(value2);
+
+        let operator = document.getElementById("operator").value;
+        // let result = eval(value1 + op + value2);
+        // eval(): 계산해주는 함수 . 코딩할 때 쓰면 안됨 (보안 문제 심각)
+
+        switch (operator) {
+          case "+":
+            document.getElementById("result").value = value1 + value2;
+            break;
+          case "-":
+            document.getElementById("result").value = value1 - value2;
+            break;
+          case "*":
+            document.getElementById("result").value = value1 * value2;
+            break;
+          case "/":
+            document.getElementById("result").value = value1 / value2;
+            break;
+          default:
+            break;
+        }
+      }
+      function reset() {
+        document.getElementById("value1").value = "";
+        document.getElementById("value2").value = "";
+        document.getElementById("operator").value = "";
+        document.getElementById("result").value = "";
+      }
+      // 실습 2
+      let num = 1;
+      function writing() {
+        let table = document.querySelector("table");
+        table.setAttribute("style", "display:inline-block");
+        let writer = document.getElementById("writer").value;
+        let content = document.getElementById("content").value;
+        let date = new Date();
+        let dateText =
+          date.getFullYear() +
+          "-" +
+          (date.getMonth() + 1) +
+          "-" +
+          date.getDate() +
+          " " +
+          date.getHours() +
+          ":" +
+          date.getMinutes();
+
+        // 1. createElement 사용
+        let tr = document.createElement("tr");
+        let td1 = document.createElement("td");
+        td1.innerText = num;
+        // td1.innerText = document.querySelectorAll("tr").length; //번호도 tr이라 +1 안해줘도 됨
+        let td2 = document.createElement("td");
+        td2.innerText = writer;
+        let td3 = document.createElement("td");
+        td3.innerText = content;
+        let td4 = document.createElement("td");
+        td4.innerText = dateText;
+
+        tr.append(td1);
+        tr.append(td2);
+        tr.append(td3);
+        tr.append(td4);
+
+        // 2. html 요소 만들어서 넣기
+        // let tr = document.createElement("tr");
+        // let html = `<td>${num}</td><td>${writer}</td><td>${content}</td><td>${date}</td>`;
+        // tr.innerHTML = html;
+
+        // 1. 2. 공통적으로 있어야 하는 코드
+        table.append(tr);
+        num++;
+      }
+    </script>
+    <style>
+      table {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    값 1: <input type="text" id="value1" /><br />
+    값 2: <input type="text" id="value2" /><br />
+    연산자: <input type="text" id="operator" /><br />
+    결과: <input type="text" id="result" /><br />
+    <br />
+    <button onclick="calc()">계산하기</button>
+    <button onclick="reset()">초기화</button>
+    <br />
+    -------------------------------------------
+    <p>방명록입니다.</p>
+    <b>작성자</b><input type="text" id="writer" />
+    <br />
+    <b>내용</b>
+    <input type="text" id="content" style="width: 300px" />
+    <br /><br />
+    <button onclick="writing()">작성</button>
+
+    <br /><br />
+    <table border="1">
+      <tr>
+        <th>번호</th>
+        <th>작성자</th>
+        <th>내용</th>
+        <th>작성일</th>
+      </tr>
+    </table>
+  </body>
+</html>

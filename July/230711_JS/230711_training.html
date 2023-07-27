@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>230711 실습</title>
+
+    <script>
+      console.log("<------자료형------>");
+      let colors = [
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "blue",
+        "navy",
+        "purple",
+      ];
+      console.log("------실습 1------");
+      console.log(colors[2]);
+      colors.push("crimson");
+      console.log(colors);
+      console.log(colors.indexOf("black")); // 존재하지 않으면 -1 반환
+      console.log(colors.reverse());
+
+      console.log("------실습 2------");
+      let me = {
+        name: "hyeiis",
+        age: 23,
+        isFemale: true,
+        say: function () {
+          return "hi";
+        },
+      };
+
+      console.log(me);
+      console.log(me.name);
+      console.log(me.age);
+      console.log(me.say());
+
+      console.log("------실습 3------");
+      console.log(`${typeof 0} isn't ${typeof "a"} data type.`);
+      console.log(
+        `Typeof를 boolean이나 null에 사용하면, ${typeof me} 결과를 얻을 수 있습니다.`
+      );
+
+      console.log("------실습 4------");
+      let mathScore = "77";
+      let engScore = "88";
+      let avgScore = (Number(mathScore) + Number(engScore)) / 2;
+
+      console.log(`평균: ${avgScore}`);
+
+      console.log("<------함수------>");
+      console.log("------실습 1------");
+
+      function multifly(num1, num2) {
+        return num1 * num2;
+      }
+      console.log(multifly(3, 7));
+      console.log(multifly(2, 2));
+
+      console.log("------실습 2------");
+      //   function square(num) {
+      //     console.log(num ** 2);
+      //   }
+
+      let square = (num) => {
+        console.log(num ** 2);
+      };
+      square(4);
+      square(11);
+      square(5);
+
+      console.log("------실습 3------");
+
+      //   function add(a, b) {
+      //     prompt("첫 번째 숫자를 입력해주세요.", a);
+      //     prompt("두 번째 숫자를 입력해주세요.", b);
+      //     return a + b;
+      //   }
+      //   function sub(a, b) {
+      //     prompt("첫 번째 숫자를 입력해주세요.", a);
+      //     prompt("두 번째 숫자를 입력해주세요.", b);
+      //     return a - b;
+      //   }
+      //   function mul(a, b) {
+      //     prompt("첫 번째 숫자를 입력해주세요.", a);
+      //     prompt("두 번째 숫자를 입력해주세요.", b);
+      //     return a * b;
+      //   }
+      //   function div(a, b) {
+      //     prompt("첫 번째 숫자를 입력해주세요.", a);
+      //     prompt("두 번째 숫자를 입력해주세요.", b);
+      //     return a / b;
+      //   }
+
+      //   let a = prompt("첫 번째 숫자를 입력해주세요.");
+      //   let b = prompt("두 번째 숫자를 입력해주세요.");
+      //   a = Number(a);
+      //   b = Number(b);
+
+      function add(a, b) {
+        let result = a + b;
+        alert(result);
+      }
+      function sub(a, b) {
+        let result = a - b;
+        alert(result);
+      }
+      function mul(a, b) {
+        let result = a * b;
+        alert(result);
+      }
+      function div(a, b) {
+        let result = a / b;
+        alert(result);
+      }
+
+      console.log("<------조건문------>");
+      console.log("------실습 4------");
+
+      //   let age = prompt("나이를 입력해주세요: ");
+
+      // if (age >= 20) {
+      //   alert("성인");
+      // } else if (age >= 17) {
+      //   alert("고등학생");
+      // } else if (age >= 14) {
+      //   alert("중학생");
+      // } else if (age >= 8) {
+      //   alert("초등학생");
+      // } else if (age >= 0) {
+      //   alert("유아");
+      // }
+
+      console.log("------실습 5------");
+      //   let age = prompt("나이를 입력해주세요: ");
+      //   let sex = prompt("성별을 입력해주세요(f / m): ");
+
+      // if (age >= 20 && sex == "m") {
+      //   alert("성인 남자");
+      // } else if (age >= 20 && sex == "f") {
+      //   alert("성인 여자");
+      // } else if (age >= 17 && sex == "m") {
+      //   alert("고등 남학생");
+      // } else if (age >= 17 && sex == "f") {
+      //   alert("고등 여학생");
+      // } else if (age >= 14 && sex == "m") {
+      //   alert("중등 남학생");
+      // } else if (age >= 14 && sex == "f") {
+      //   alert("중등 여학생");
+      // } else if (age >= 8 && sex == "m") {
+      //   alert("초등 남학생");
+      // } else if (age >= 8 && sex == "f") {
+      //   alert("초등 여학생");
+      // } else if (age >= 0 && sex == "m") {
+      //   alert("남유아");
+      // } else if (age >= 0 && sex == "f") {
+      //   alert("여유아");
+      // } else {
+      //   alert("잘못 입력하셨습니다.");
+      // }
+
+      //   if (age >= 20) {
+      //     if (sex == "m")
+      //       alert("성인 남자");
+      //     else if (sex == "f")
+      //       alert("성인 여자");
+      //   } ...
+
+      console.log("------실습 6------");
+      let now = new Date().getHours(); //현재 시간(시 만) 받아옴
+      now >= 0 && now < 12 ? console.log("오전") : console.log("오후");
+
+      console.log("<------반복문------>");
+      console.log("------실습 7------");
+
+      //   //   let result = [];
+      //   for (let num3 = 1; num3 <= 10000; num3++) {
+      //     if (num3 % 13 == 0 && num3 % 2 == 1) {
+      //       //   result.push(num3);
+      //       console.log(num3);
+      //     }
+      //   }
+      //   //   console.log(result);
+
+      //   let num3 = prompt("숫자를 입력해주세요.");
+      //   for (let i = 1; i <= num3; i++) {
+      //     if (i % 13 == 0 && i % 2 == 1) {
+      //       // result.push(i);
+      //       console.log(i);
+      //     }
+      //   }
+      //   //   console.log(result);
+
+      console.log("------실습 8------");
+      //   for (let i = 1; i <= 9; i++) {
+      //     console.log(`***${i}단***`);
+      //     for (let j = 1; j <= 9; j++) {
+      //       console.log(`${i} X ${j} = ${i * j}`);
+      //     }
+      //   }
+
+      console.log("------실습 9------");
+      let n = prompt("n의 값을 입력해주세요(단, 0 < n < 100).");
+      let sum = 0;
+      n = Number(n);
+      while (0 < n) {
+        // if (n > 100) {
+        //   console.log("잘못 입력하셨습니다.");
+        //   break;
+        // }
+        if (n % 2 == 0 || n % 3 == 0) {
+          sum += n;
+        }
+        n--;
+      }
+      console.log(sum);
+
+      for (let i = 1; i <= n; i++) {
+        if (i % 2 == 0 || i % 3 == 0) sum += i;
+        console.log(i);
+      }
+      console.log(sum);
+    </script>
+  </head>
+  <body>
+    <!-- <button onclick="add()">더하기</button>
+    <button onclick="sub()">빼기</button>
+    <button onclick="mul()">곱하기</button>
+    <button onclick="div()">나누기</button> -->
+  </body>
+</html>

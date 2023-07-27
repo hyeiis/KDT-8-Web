@@ -1,0 +1,100 @@
+/* body {
+        height: 1000px;
+      } */
+
+/* 
+div {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  position: absolute;
+  position: fixed;
+} */
+.item1 {
+  background-color: crimson;
+}
+.item2 {
+  background-color: beige;
+  left: 30px;
+}
+.item3 {
+  top: 30px;
+  right: 30px;
+  background-color: skyblue;
+}
+
+.parent {
+  position: relative;
+}
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+}
+.circle1 {
+  background-color: #9afaff;
+  top: 0;
+  left: 200px;
+}
+.circle2 {
+  background-color: #84ff8d;
+  top: 0;
+  left: 150px;
+}
+.circle3 {
+  background-color: #ffeb88;
+  top: 0;
+  left: 100px;
+}
+.circle4 {
+  background-color: #ffb680;
+  top: 0;
+  left: 50px;
+}
+.circle5 {
+  top: 0;
+  left: 0;
+  background-color: #ff7c7c;
+}
+
+.bg-lion {
+  width: 600px;
+  height: 500px;
+  background-image: url(https://item.kakaocdn.net/do/d84248170c2c52303db27306a00fb861f604e7b0e6900f9ac53a43965300eb9a);
+  background-color: orange;
+  background-repeat: no-repeat; /* no-repeat repeat-x repeat-y */
+  background-position: center;
+  /* background-position: top right; */
+  background-size: cover; /* 가로 세로 중 큰 너비에 맞춰짐 */
+  /* background-size: contain; 작은 너비에 맞춰짐 */
+  /* background-size: 500px; */
+  background-attachment: scroll;
+  overflow: scroll;
+}
+
+.display div {
+  width: 100px;
+  height: 100px;
+}
+.display {
+  width: 150px;
+  height: 500px;
+  background-color: greenyellow;
+  /* display: inline-block; */
+  display: flex;
+  /* flex-direction: column-reverse; */
+  flex-wrap: wrap;
+  /* justify-content: start; */
+  /* align-items: center; */
+  align-content: start;
+}
+.div1 {
+  background-color: red;
+}
+.div2 {
+  background-color: orange;
+}
+.div3 {
+  background-color: yellow;
+}

@@ -1,0 +1,130 @@
+/* 실습 1 */
+.box {
+  width: auto;
+  height: 200px;
+  background-color: orange;
+}
+.box div {
+  display: inline-block;
+  width: 200px;
+  height: 100px;
+  margin-right: 30px;
+}
+.html {
+  background-color: skyblue;
+}
+.css {
+  background-color: green;
+}
+.js {
+  background-color: red;
+}
+
+/* 실습 2 */
+.kdt {
+  width: 10vw;
+  height: 10vw;
+  background-color: palevioletred;
+  line-height: 10vw;
+  color: white;
+  text-align: center;
+  margin: 45%; /* 100(전체)-10(컨텐츠 크기) = 90 / 2 (상하좌우) = 45*/
+
+  /* 
+  *리더님 코드*
+  color: white;
+  text-align: center;
+  width: 10vw;
+  height: 10vw;
+  line-height: 10vw;
+  background-color: blue;
+  margin: Calc((100vh - 10vw) / 2) auto; */
+}
+
+/* 실습 3 & 4 */
+.border {
+  width: 200px;
+  height: 200px;
+  background-color: lightcyan;
+  border-width: 5px;
+  border-style: dashed;
+  border-color: brown;
+  border-bottom: double blue;
+  border-left: dotted blueviolet;
+  border-right: solid wheat;
+  border-radius: 0px 10px 5px 20px;
+}
+
+/* 실습 5 */
+.box1,
+.box2 {
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+  border: 15px solid red;
+  background-color: orange;
+}
+
+.box1 {
+  box-sizing: content-box;
+}
+.box2 {
+  box-sizing: border-box;
+}
+
+/* 실습 6 */
+.box3 {
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+}
+.box3:hover {
+  display: none;
+}
+
+@font-face {
+  font-family: "TAEBAEKmilkyway";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/TAEBAEKmilkyway.woff2")
+    format("woff2");
+  font-weight: 10px;
+  font-style: normal;
+}
+
+/* 실습 7 */
+.outer * {
+  font-family: "TAEBAEKmilkyway";
+  font-weight: 10px;
+}
+.name {
+  margin-left: 25px;
+  margin-bottom: 5px;
+}
+.email {
+  margin-left: 10px;
+}
+[placeholder] {
+  font-style: italic;
+}
+[placeholder]:focus {
+  font-style: normal;
+  color: black;
+}
+input:focus,
+textarea:focus {
+  background-color: beige;
+}
+/* [type="checkbox"]:checked,
+[type="radio"]:checked {
+  color: red;
+} */
+textarea {
+  resize: none;
+}
+input {
+  accent-color: darkmagenta;
+}
+[type="button"]:hover {
+  font-weight: bold;
+  color: darkmagenta;
+  border-radius: 3px;
+}

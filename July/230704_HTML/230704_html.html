@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <title>230704 html 수업</title>
+  </head>
+
+  <body>
+    <h1>h1 태그입니다.</h1>
+    <h2>h2 태그입니다.</h2>
+    <h3>h3 태그입니다.</h3>
+    <h4>h4 태그입니다.</h4>
+    <h5>h5 태그입니다.</h5>
+    <h6>h6 태그입니다.</h6>
+    <p>p 태그입니다.</p>
+    <br />
+    줄바꿈 태그입니다.
+    <ul type="circle">
+      <li><b>사과</b></li>
+      <li>바나나</li>
+      <li>파인애플</li>
+    </ul>
+    <hr />
+    <ol type="a" start="3" reversed>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ol>
+    <hr />
+
+    <img
+      src="http://image.dongascience.com/Photo/2020/03/5bddba7b6574b95d37b6079c199d7101.jpg"
+      alt="강아지"
+      width="300"
+      height="350"
+    />
+    <img src="./puppy.jpg" alt="강아지" width="300" height="350" />
+    <img
+      src="C:\Users\rkqqn\Documents\github\KDT-8-Web\puppy.jpg"
+      alt="강아지(절대경로-liveserver에서 x)"
+      width="300"
+      height="350"
+    />
+    <hr />
+
+    <a
+      href="https://www.naver.com"
+      target="_blank"
+      rel="noopener"
+      style="text-decoration: none"
+      >NAVER
+    </a>
+    <!-- target: default는 _self -->
+    <hr />
+
+    <input type="button" value="button" />
+    <input type="text" id="text" />
+    <input type="password" />
+    <input type="checkbox" name="fruits" />apple
+    <input type="checkbox" name="fruits" />banana
+    <input type="checkbox" name="fruits" />grape
+    <br />
+    <input type="radio" name="sports" value="soccer" checked />soccer
+    <input type="radio" name="sports" value="baseball" />baseball
+    <input type="radio" name="sports" value="basketball" />basketball
+    <br />
+    <input type="date" />
+    <input type="datetime-local" />
+    <hr />
+
+    <select>
+      <optgroup label="커피">
+        <option value="americano">아메리카노</option>
+        <option value="latte">라떼</option>
+      </optgroup>
+      <optgroup label="티">
+        <option value="tea">티</option>
+      </optgroup>
+    </select>
+    <hr />
+
+    <textarea cols="30" rows="10"></textarea>
+    <hr />
+
+    <table border="1" cellspacing="0" cellpadding="5" width="300" height="50">
+      <tr align="center">
+        <th>이름</th>
+        <th>나이</th>
+        <th>전화번호</th>
+      </tr>
+      <tr align="center">
+        <td rowspan="2">김세령</td>
+        <td>10</td>
+        <td colspan="2">010-0000-0000</td>
+      </tr>
+      <tr align="center">
+        <!-- <td>김세령</td> -->
+        <td>10</td>
+        <!-- <td>010-0000-0000</td> -->
+      </tr>
+    </table>
+  </body>
+</html>
