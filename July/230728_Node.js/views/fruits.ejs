@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- $(JQuery) 쓰려면 아래 script 필수 -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="public/css/style.css">
+    <title>과일 바꾸기</title>
+
+    <script>
+        function apple() {
+            $("#fruit").attr("src", "public/image/apple.jpg");
+        }
+        function banana() {
+            $("#fruit").attr("src", "public/image/banana.jpg");
+        }
+        function grape() {
+            $("#fruit").attr("src", "public/image/grape.jpeg");
+        }
+        function peach() {
+            $("#fruit").attr("src", "public/image/peach.jpeg");
+        }
+    </script>
+</head>
+
+<body>
+    <div class="div1">
+        <img id="fruit" alt="" />
+        <br />
+        <button onclick="apple()">사과</button>
+        <button onclick="banana()">바나나</button>
+        <button onclick="grape()">포도</button>
+        <button onclick="peach()">복숭아</button>
+    </div>
+
+</body>
+
+</html>
