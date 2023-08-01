@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            setDateBox();
+        });
+        function setDateBox() {
+            var date = new Date();
+            var start_year = '1940';
+            var current_year = date.getFullYear();
+
+            for (var y = (start_year); y <= (current_year); y++) {
+                $("#year").append("<option value='" + y + "'>" + y + "</option>");
+                $("#year2").append("<option value='" + y + "'>" + y + "</option>");
+            }
+
+            for (var i = 1; i <= 12; i++) {
+                if (String(i).length == '1') {
+                    $("#month").append("<option value='" + "0" + i + "'>" + "0" + i + "</option>");
+                } else {
+                    $("#month").append("<option value='" + i + "'>" + i + "</option>");
+                }
+                if (String(i).length == '1') {
+                    $("#month2").append("<option value='" + "0" + i + "'>" + "0" + i + "</option>");
+                } else {
+                    $("#month2").append("<option value='" + i + "'>" + i + "</option>");
+                }
+            }
+
+            for (var i = 1; i <= 31; i++) {
+                if (String(i).length == '1') {
+                    $("#day").append("<option value='" + "0" + i + "'>" + "0" + i + "</option>");
+                } else {
+                    $("#day").append("<option value='" + i + "'>" + i + "</option>");
+                }
+                if (String(i).length == '1') {
+                    $("#day2").append("<option value='" + "0" + i + "'>" + "0" + i + "</option>");
+                } else {
+                    $("#day2").append("<option value='" + i + "'>" + i + "</option>");
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form name="register">
+        <label for="name">이름</label>
+        <input type="text" id="name">
+        <br>
+        <fieldset>
+            <legend>성별</legend>
+            <input type="radio" name="gender" value="남자">
+            <label for="m">남자</label>
+            <input type="radio" name="gender" value="여자">
+            <label for="f">여자</label>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>생년월일</legend>
+            <select name="year" id="year">
+
+            </select>
+            <label for="year">년</label>
+            <select name="month" id="month">
+
+            </select>
+            <label for="month">월</label>
+            <select name="day" id="day">
+
+            </select>
+            <label for="day">일</label>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>관심사</legend>
+            <input type="checkbox" name="interest" value="여행">
+            <label for="travel">여행</label>
+            <input type="checkbox" name="interest" value="패션">
+            <label for="fashion">패션</label>
+            <input type="checkbox" name="interest" value="음식">
+            <label for="food">음식</label>
+        </fieldset>
+        <br>
+        <button type="button" onclick="axiosGet()">회원가입</button>
+    </form>
+
+    <div class="result"></div>
+
+    <script>
+        function axiosGet() {
+            const resultBox = document.querySelector('.result');
+            const form = document.forms['register'];
+
+            const data = {
+                name: form.name.value,
+                gender: form.gender.value,
+                year: form.year.value,
+                month: form.month.value,
+                day: form.day.value,
+                interest: form.interest.value
+            };
+
+            if (form.name.value === '') {
+                alert('이름을 입력해주세요');
+                return;
+            }
+            axios({
+                method: 'GET',
+                url: '/axios',
+                params: data,
+            }).then((res) => {
+                console.log("reponse", res);
+                resultBox.textContent = `${res.data.name}님!
+                성별: ${res.data.gender} / 
+                생년월일: ${res.data.year}년 ${res.data.month}월 ${res.data.day}일 /
+                관심사: ${res.data.interest}
+                이 맞나요?`;
+            })
+        }
+
+    </script>
+</body>
+
+</html>
