@@ -15,6 +15,7 @@ app.get("/", (req, res) => {
   res.render("training");
 });
 
+//* get으로 정보 받기
 app.get("/getForm", (req, res) => {
   console.log(req.query);
   res.render("training_result_get", {
@@ -23,6 +24,7 @@ app.get("/getForm", (req, res) => {
   });
 });
 
+//* post로 정보 받기
 app.post("/postForm", (req, res) => {
   console.log(req.body);
   res.render("training_result_post", {
@@ -31,6 +33,7 @@ app.post("/postForm", (req, res) => {
   });
 });
 
+//* 서버 오픈
 app.listen(PORT, () => {
   console.log(`http://localhost:${PORT}`);
 });
