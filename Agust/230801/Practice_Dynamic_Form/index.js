@@ -16,10 +16,26 @@ app.get("/", (req, res) => {
 });
 
 //* axios
-//* get으로 정보 받고 다시 send로 보냄
-app.get("/axios", (req, res) => {
-  console.log("back", req.query);
-  res.send(req.query);
+//* get
+app.get("/axiosGet", (req, res) => {
+  res.render("get");
+});
+app.get("/axiosGetResult", (req, res) => {
+  res.send({ result: true, data: req.query });
+});
+
+//* post
+app.get("/axiosPost", (req, res) => {
+  res.render("post");
+});
+app.post("/axiosPostResult", (req, res) => {
+  const id = "kdt8";
+  const password = "1234";
+  if (id === req.body.userId && password === req.body.userPassword) {
+    res.send({ result: true, userInfo: req.body });
+  } else {
+    res.send({ result: false });
+  }
 });
 
 //* server open
