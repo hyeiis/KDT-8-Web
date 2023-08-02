@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>회원가입</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>개인정보</legend>
+        <label for="id">아이디: </label>
+        <input type="text" name="id" id="id">
+        <br>
+        <label for="password">비밀번호: </label>
+        <input type="password" name="password" id="password">
+        <br>
+        <label for="name">이름: </label>
+        <input type="text" name="name" id="name">
+        <br>
+        <label for="age">나이: </label>
+        <input type="text" name="age" id="age">
+        <br>
+        <label for="upload">프로필 사진: </label>
+        <input type="file" name="profile" id="profile">
+        <br>
+        <button type="button" onclick="reset()">리셋</button>
+        <button type="button" onclick="register()">회원가입</button>
+    </fieldset>
+    <div class="result"></div>
+    <script>
+        const resultBox = document.querySelector(".result");
+
+        function reset() {
+            resultBox.innerHTML = `<div></div>`;
+        }
+
+        function register() {
+            const file = document.getElementById('profile');
+            console.log(file.files[0]);
+
+            const formData = new FormData();
+            formData.append('profile', file.files[0]);
+
+            axios({
+                method: 'POST',
+                url: '/register',
+                data: formData,
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            }).then((res) => {
+                // console.log("response", res);
+                location.href = `/register`;
+            });
+        }
+    </script>
+</body>
+
+</html>
