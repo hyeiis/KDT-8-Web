@@ -32,7 +32,8 @@ const uploadDetail = multer({
 
 //* router
 app.get("/", (req, res) => {
-  res.render("index");
+  // res.render("index");
+  res.render("dynamic");
 });
 
 //* axios dynamic file upload
