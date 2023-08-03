@@ -35,7 +35,7 @@ const uploadDetail = multer({
     },
   }),
   // limits: 파일 제한
-  limits: { fileSize: 5 * 1024 * 1024 }, // 5배
+  limits: { fileSize: 5 * 1024 * 1024 }, // 5MB
 });
 
 //* router
