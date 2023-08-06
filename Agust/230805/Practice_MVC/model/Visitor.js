@@ -11,7 +11,7 @@ const conn = mysql.createConnection({
   host: "localhost",
   user: "user",
   password: "1234",
-  database: "kdt8",
+  database: "db1",
 });
 
 // mysql 연결 후

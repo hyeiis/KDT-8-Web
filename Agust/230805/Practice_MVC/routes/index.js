@@ -1,5 +1,6 @@
 const express = require("express");
-const controller = require("../controller/Cvisitor");
+const controller = require("../controller/CVisitor");
+const route = require("../../MVC/routes");
 const router = express.Router();
 
 // GET / => localhost:PORT/
