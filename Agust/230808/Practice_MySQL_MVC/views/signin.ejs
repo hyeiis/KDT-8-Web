@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>로그인</title>
+</head>
+
+<body>
+    <form name="info-form" action="/user/profile">
+        <input type="hidden">
+    </form>
+
+    <form name="login-form">
+        <fieldset>
+            <legend>로그인</legend>
+            <label for="id">ID: </label><input type="text" id="userid" placeholder="id"><br>
+            <label for="pw">PASSWORD: </label><input type="password" id="pw" placeholder="password"><br>
+            <button type="button" onclick="login()">로그인</button>
+        </fieldset>
+    </form>
+
+    <br>
+    <a href="/user/signup">회원가입</a>
+
+    <script>
+        const login_form = document.forms['login-form'];
+
+        function login() {
+            axios({
+                method: 'POST',
+                url: '/user/signin',
+                data: {
+                    userid: login_form.userid.value,
+                    pw: login_form.pw.value,
+                }
+            }).then((res) => {
+                console.log('login', res);
+            }).then((data) => {
+                console.log('post profile', data);
+                if (data) {
+                    // true
+                    alert('로그인 성공');
+                    const info_form = document.forms['info-form'];
+                    info_form.submit();
+                } else {
+                    alert('로그인 실패');
+                    login_form.reset();
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>
