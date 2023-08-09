@@ -8,11 +8,9 @@ app.set("views", "./views");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-//* [라우터 분리]
-app.get("/", (req, res) => {
-  res.render("index");
-});
+app.use("/static", express.static(__dirname + "/static"));
 
+//* 라우터
 const userRouter = require("./routes/user");
 app.use("/user", userRouter);
 

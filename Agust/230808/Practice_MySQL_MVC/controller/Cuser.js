@@ -10,7 +10,7 @@ exports.signup = (req, res) => {
 };
 exports.post_signup = (req, res) => {
   User.post_signup(req.body, () => {
-    res.send(true);
+    res.send({ result: true });
   });
 };
 
@@ -19,17 +19,17 @@ exports.signin = (req, res) => {
   res.render("signin");
 };
 exports.post_signin = (req, res) => {
-  User.login(req.body, (result) => {
-    if (req.body.userid == result.id) res.send(true);
-    else res.send(false);
+  User.post_signin(req.body, (result) => {
+    console.log("login", result);
+    if (result.length > 0) res.send({ result: true, data: result[0] });
+    else res.send({ result: false, data: null });
   });
 };
 
 // 프로필
-exports.profile = (req, res) => {
-  User.profile(req.body, (result) => {
-    if (req.body.userid == result.id)
-      res.render("profile", { data: result[0] });
+exports.post_profile = (req, res) => {
+  User.post_profile(req.body, (result) => {
+    if (result.length > 0) res.render("profile", { data: result[0] });
     else res.redirect("/user/signin");
   });
 };
@@ -37,13 +37,13 @@ exports.profile = (req, res) => {
 // 프로필 수정
 exports.edit_profile = (req, res) => {
   User.edit_profile(req.body, () => {
-    res.send("회원 정보 수정 성공!");
+    res.send("회원 정보 수정 성공!", { result: true });
   });
 };
 
 // 프로필 삭제
 exports.delete_profile = (req, res) => {
   User.delete_profile(req.body.id, () => {
-    res.send(true);
+    res.send({ result: true });
   });
 };

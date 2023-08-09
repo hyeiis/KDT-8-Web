@@ -11,12 +11,11 @@
 
 <body>
     <h1>회원가입</h1>
-    <form name="sigunup-form">
-        <label for="id">ID: </label><input type="text" id="id" placeholder="id"><br>
+    <form name="signup-form">
+        <label for="id">ID: </label><input type="text" id="userid" placeholder="id"><br>
         <label for="pw">PASSWORD: </label><input type="password" id="pw" placeholder="password"><br>
         <label for="name">이름: </label><input type="text" id="name"><br><br>
         <button type="button" onclick="signup()">회원가입</button>
-
     </form>
 
     <script>
@@ -33,10 +32,11 @@
                 }
             }).then((res) => {
                 console.log('signup', res);
-            }).then((data) => {
-                alert('회원가입 성공');
-                document.location.href = '/user/signin';
-            })
+                if (res.data.result) {
+                    alert('회원가입 성공');
+                    window.location.href = '/user/signin';
+                }
+            });
         }
     </script>
 

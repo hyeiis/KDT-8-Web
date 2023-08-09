@@ -10,8 +10,8 @@
 </head>
 
 <body>
-    <form name="info-form" action="/user/profile">
-        <input type="hidden">
+    <form name="profile-form" method="post" action="/user/profile">
+        <input type="hidden" name="profile">
     </form>
 
     <form name="login-form">
@@ -38,18 +38,18 @@
                     pw: login_form.pw.value,
                 }
             }).then((res) => {
-                console.log('login', res);
-            }).then((data) => {
-                console.log('post profile', data);
-                if (data) {
-                    // true
+                if (res.data.result) {
                     alert('로그인 성공');
-                    const info_form = document.forms['info-form'];
-                    info_form.submit();
+                    const profile_form = document.forms['profile-form'];
+                    profile_form.profile.value = login_form.userid.value;
+                    profile_form.submit();
                 } else {
                     alert('로그인 실패');
+                    // window.location.href = '/user/signin';
+                    // windows.location.reload();
                     login_form.reset();
                 }
+                console.log('login', res);
             })
         }
     </script>
