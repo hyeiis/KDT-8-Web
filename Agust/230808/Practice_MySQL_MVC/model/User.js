@@ -46,7 +46,7 @@ exports.post_profile = (data, callback) => {
 
 // 프로필 수정
 exports.edit_profile = (data, callback) => {
-  const query = `UPDATE user SET name = '${data.name}', pw = '${data.pw}' WHERE id = ${data.id};`;
+  const query = `UPDATE user SET userid = '${data.userid}' name = '${data.name}', pw = '${data.pw}' WHERE id = ${data.id};`;
   conn.query(query, () => {
     callback();
   });
