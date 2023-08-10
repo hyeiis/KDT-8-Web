@@ -12,8 +12,13 @@ const sequelize = new Sequelize(
 );
 
 // model
+db.Student = require("./Students")(sequelize);
+db.Classes = require("./Classes")(sequelize);
 
 // relationship
+// 1 : 다
+db.Student.hasMany(db.Classes, { foreignKey: "student_id" });
+db.Classes.belongsTo(db.Student, { foreignKey: "student_id" });
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
