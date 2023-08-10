@@ -27,9 +27,9 @@
     <a href="/user/signup">회원가입</a>
 
     <script>
+        const login_form = document.forms['login-form'];
 
         function login() {
-            const login_form = document.forms['login-form'];
             axios({
                 method: 'POST',
                 url: '/user/signin',
@@ -38,7 +38,6 @@
                     pw: login_form.pw.value,
                 }
             }).then((res) => {
-                console.log(res.data)
                 if (res.data.result) {
                     alert('로그인 성공');
                     const profile_form = document.forms['profile-form'];

@@ -37,7 +37,7 @@ exports.post_profile = (req, res) => {
 // 프로필 수정
 exports.edit_profile = (req, res) => {
   User.edit_profile(req.body, () => {
-    res.send("회원 정보 수정 성공!", { result: true });
+    res.send({ result: true, message: "회원정보수정완료" });
   });
 };
 

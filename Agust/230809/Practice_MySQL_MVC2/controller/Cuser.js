@@ -29,7 +29,7 @@ export const post_signup = async (req, res) => {
 export const post_signin = async (req, res) => {
   try {
     const result = await User.post_signin(req.body);
-    if (result.lendth > 0) res.send({ result: true, data: result[0] });
+    if (result.length > 0) res.send({ result: true, data: result[0] });
     else res.send({ result: false, data: null });
   } catch (error) {
     console.log(error);
@@ -51,7 +51,7 @@ export const post_profile = async (req, res) => {
 export const edit_profile = async (req, res) => {
   try {
     await User.edit_profile(req.body);
-    res.status(404).send({ result: true });
+    res.status(200).send({ result: true });
   } catch (error) {
     console.log(error);
   }

@@ -24,4 +24,7 @@ router.patch("/profile/edit", controller.edit_profile);
 //* 프로필 삭제
 router.delete("/profile/delete", controller.delete_profile);
 
+// findAll
+router.get("/findall", controller.find_all);
+
 module.exports = router;

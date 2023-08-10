@@ -34,7 +34,7 @@ export const post_signin = async (data) => {
 export const post_profile = async (data) => {
   try {
     const query = `SELECT * FROM user WHERE userid = ?`;
-    const [rows] = await conn.query(query, [data.userid]);
+    const [rows] = await conn.query(query, [data.profile]);
     return rows;
   } catch (error) {
     console.log(error);
@@ -43,9 +43,9 @@ export const post_profile = async (data) => {
 
 export const edit_profile = async (data) => {
   try {
-    const query = `UPDATE user SET userid = ?, name = ?, pw = ? WHERE id = ?`;
+    const query = `UPDATE user SET name = ?, pw = ? WHERE id = ?`;
     const [rows] = await conn.query(query, [
-      data.userid,
+      // data.userid,
       data.name,
       data.pw,
       data.id,

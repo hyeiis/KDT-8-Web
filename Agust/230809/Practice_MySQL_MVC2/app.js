@@ -8,11 +8,11 @@ app.set("views", "./views");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use("/static", express.static(__dirname + "/static"));
+// app.use("/static", express.static(__dirname + "/static"));
 
 //* 라우터
 // const userRouter = require("./routes/user");
-import userRouter from "./routes.user.js";
+import userRouter from "./routes/user.js";
 app.use("/user", userRouter);
 
 app.use("*", (req, res) => {
