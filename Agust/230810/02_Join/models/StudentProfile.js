@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize");
 
-const studentModel = (sequelize) => {
-  const Student = sequelize.define("student", {
+const studentProfileModel = (sequelize) => {
+  const StudentProfile = sequelize.define("StudentProfile", {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -12,7 +12,7 @@ const studentModel = (sequelize) => {
     major: { type: DataTypes.STRING(30), allowNull: false },
     enroll: { type: DataTypes.INTEGER, allowNull: false },
   });
-  return Student;
+  return StudentProfile;
 };
 
-module.exports = studentModel;
+module.exports = studentProfileModel;
