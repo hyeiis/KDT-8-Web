@@ -30,12 +30,10 @@
     </div>
 
     <script>
-        const myModalAlternative = new bootstrap.Modal('#myModal', options);
 
         $(document).ready(function () {
-            $("#myBtn").click(function () {
-                $("#myModal").modal("show");
-            });
+            const myModal = new bootstrap.Modal('#myModal', {});
+            myModal.show();
         });
     </script>
 </body>
