@@ -11,12 +11,36 @@
     <form name="signup-form">
         <fieldset>
             <legend>SIGN UP</legend>
-            <input type="text" id="id" placeholder="ID"><br>
+            <input type="text" id="userid" placeholder="ID"><br>
             <input type="password" id="password" placeholder="PASSWORD">
             <input type="text" id="name" placeholder="이름">
         </fieldset>
-        <button type="button">SIGN UP</button>
+        <button type="button" onclick="signupFunc">SIGN UP</button>
     </form>
+
+    <script>
+        async function signupFunc() {
+            const userid = document.getElementById("userid").value
+            const pw = document.getElementById("password").value
+            const name = document.getElementById("name").value
+            const data = {
+                userid: userid,
+                password: password,
+                name: name
+            }
+
+            const result = await axios({
+                url: '/signup',
+                method: "POST",
+                data: data
+            })
+            if (result.data.result) {
+                document.location.href = '/signin'
+            }
+
+
+        }
+    </script>
 </body>
 
 </html>
