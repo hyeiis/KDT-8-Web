@@ -12,7 +12,7 @@
     <form name="login-form">
         <fieldset>
             <legend>LOGIN</legend>
-            <input type="text" id="id" placeholder="ID"><br>
+            <input type="text" id="userid" placeholder="ID"><br>
             <input type="password" id="pw" placeholder="PASSWORD">
         </fieldset>
         <button type="button" onclick="loginFunc()">LOGIN</button>
@@ -20,24 +20,25 @@
 
     <script>
         async function loginFunc() {
-            const userid = document.getElementById("userid").value
-            const pw = document.getElementById("pw").value
+            const userid = document.getElementById("userid").value;
+            const pw = document.getElementById("pw").value;
             const data = {
-                userid: userid,
-                pw: pw,
-            }
+                userid,
+                pw,
+            };
 
             const result = await axios({
                 url: '/signin',
                 method: "POST",
-                data: data
-            })
+                data,
+            });
+
             if (result.data.result) {
-                alert('환영합니다~')
-                document.location.href = '/'
+                alert('환영합니다~');
+                document.location.href = '/';
             } else {
                 // 에러 메시지
-                alert(result.data.message)
+                alert(result.data.message);
             }
 
 

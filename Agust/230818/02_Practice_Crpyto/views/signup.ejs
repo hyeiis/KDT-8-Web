@@ -16,30 +16,29 @@
             <input type="password" id="pw" placeholder="PASSWORD"><br>
             <input type="text" id="name" placeholder="이름">
         </fieldset>
-        <button type="button" onclick="signupFunc">SIGN UP</button>
+        <button type="button" onclick="signupFunc()">SIGN UP</button>
     </form>
 
     <script>
         async function signupFunc() {
-            const userid = document.getElementById("userid").value
-            const pw = document.getElementById("pw").value
-            const name = document.getElementById("name").value
+            const userid = document.getElementById("userid").value;
+            const pw = document.getElementById("pw").value;
+            const name = document.getElementById("name").value;
             const data = {
-                userid: userid,
-                pw: pw,
-                name: name
-            }
+                userid,
+                pw,
+                name,
+            };
 
             const result = await axios({
                 url: '/signup',
                 method: "POST",
-                data: data
-            })
+                data,
+            });
+
             if (result.data.result) {
-                document.location.href = '/signin'
+                document.location.href = '/signin';
             }
-
-
         }
     </script>
 </body>
