@@ -14,14 +14,14 @@ exports.get_signin = (req, res) => {
 };
 
 // 회원가입
-exports.register = async (req, res) => {
+exports.signup = async (req, res) => {
   try {
-    const { userid, password, name } = req.body;
-    const hashPw = bcryptPassword(password);
+    const { userid, pw, name } = req.body;
+    const hashPw = bcryptPassword(pw);
     const result = await User.create({
       userid,
       name,
-      password: hashPw,
+      pw: hashPw,
     });
     if (result) {
       res.json({ result: true });
@@ -32,9 +32,9 @@ exports.register = async (req, res) => {
 };
 
 // 로그인
-exports.login = async (req, res) => {
+exports.signin = async (req, res) => {
   try {
-    const { userid, password } = req.body;
+    const { userid, pw } = req.body;
     // 사용자 조회
     const result = await User.findOne({
       where: { userid },
@@ -44,7 +44,7 @@ exports.login = async (req, res) => {
       res.json({ result: false, message: "사용자가 존재하지 않습니다" });
     }
     // 비밀번호 확인
-    const compare = comparePassword(password, result.password);
+    const compare = comparePassword(pw, result.pw);
     if (compare) {
       res.json({ result: true });
     } else {
@@ -55,10 +55,10 @@ exports.login = async (req, res) => {
   }
 };
 
-const bcryptPassword = (password) => {
-  return bcrypt.hashSync(password, 10);
+const bcryptPassword = (pw) => {
+  return bcrypt.hashSync(pw, 10);
 };
 
-const comparePassword = (password, dbPw) => {
-  return bcrypt.compareSync(password, dbPw);
+const comparePassword = (pw, dbPw) => {
+  return bcrypt.compareSync(pw, dbPw);
 };

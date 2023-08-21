@@ -13,7 +13,7 @@
         <fieldset>
             <legend>LOGIN</legend>
             <input type="text" id="id" placeholder="ID"><br>
-            <input type="password" id="password" placeholder="PASSWORD">
+            <input type="password" id="pw" placeholder="PASSWORD">
         </fieldset>
         <button type="button" onclick="loginFunc()">LOGIN</button>
     </form>
@@ -28,7 +28,7 @@
             }
 
             const result = await axios({
-                url: '/login',
+                url: '/signin',
                 method: "POST",
                 data: data
             })
