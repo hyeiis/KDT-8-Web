@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        <%= username%>님 환영합니다
+    </h1>
+    <ul style="list-style: none;">
+        <li>성별: <%= gender %>
+        </li>
+        <li>생년월일: <%= birthYear %>년 <%= birthMonth %>월 <%=birthDay %>일</li>
+        <li>관심사: <%= hobby %>
+        </li>
+
+        <% if(color.result) { %>
+            <li>좋아하는 색상: <%= color.value %>
+            </li>
+            <% } %>
+                <% if(number.result) { %>
+                    <li>좋아하는 숫자: <%= number.value %>
+                    </li>
+                    <% } %>
+    </ul>
+</body>
+
+</html>
