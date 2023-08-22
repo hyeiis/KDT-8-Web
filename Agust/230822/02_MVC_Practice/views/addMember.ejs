@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>회원 정보 추가</h1>
+    <a href="/">홈으로 이동</a>
+    <form name="form" onsubmit="addMem(event)">
+        <label for="name">이름: </label><input type="text" name="name">
+        <label for="gender">성별: </label>
+        <input type="checkbox" name="gender" value="남자"><label for="male">남자</label>
+        <input type="checkbox" name="gender" value="여자"><label for="female">여자</label>
+        <label for="major">전공: </label><input type="text" name="major">
+        <button type="submit">등록</button>
+    </form>
+
+    <script>
+        async function addMem(e) {
+            e.preventDefault();
+            const form = document.forms['form'];
+            const data = {
+                name: form.name.value,
+                gender: form.gender.value,
+                major: form.major.value
+            };
+            try {
+                const result = await axios.post({
+                    url: '/memeber',
+                    data
+                });
+                console.log("회원 정보가 추가되었습니다");
+            } catch (error) {
+                console.log(error)
+            }
+        }
+    </script>
+</body>
+
+</html>
