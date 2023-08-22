@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>POST</h1>
+    <form onsubmit="login(event)" name="login-form">
+        <label for="username">아이디</label>
+        <input type="text" id="username" required />
+        <br />
+        <label for="password">비밀번호</label>
+        <input type="password" id="password" required />
+        <br />
+        <button type="submit">로그인</button>
+    </form>
+    <br />
+    <div class="result"></div>
+    <script>
+        //코드 실습
+        async function login(e) {
+            e.preventDefault(); // 기본 제출 동작 막음
+            // 폼 데이터 가져오기
+            const form = document.forms['login-form'];
+            const resultDiv = document.querySelector('.result');
+            // 백엔드로 보낼 데이터
+            const data = {
+                username: form.username.value,
+                password: form.password.value
+            };
+            try {
+                const result = await axios({
+                    method: "POST",
+                    url: "/resultPost",
+                    data,
+                });
+                if (result.data.result) {
+                    resultDiv.textContent = `${result.data.userInfo.id}님 환영합니다.`;
+                    resultDiv.style.color = 'purple';
+                } else {
+                    resultDiv.textContent = '아이디 혹은 비밀번호가 틀렸습니다.';
+                }
+            }
+            catch (error) {
+                console.log(error);
+            }
+
+            // axios.post({
+            //     url: '/resultPost',
+            //     data
+            // }).then((res) => {
+            //     console.log(res.data);
+            //     if (res.data.result) {
+            //         resultDiv.textContent = `${res.data.userInfo.id}님 환영합니다.`;
+            //         resultDiv.style.color = 'purple';
+            //     } else
+            //         resultDiv.textContent = '아이디 혹은 비밀번호가 틀렸습니다.';
+            // })
+
+        }
+    </script>
+</body>
+
+</html>
