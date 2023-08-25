@@ -11,6 +11,7 @@ router.get("/members", controller.members);
 router.get("/members/:index", controller.member);
 
 // 회원 정보 추가
-router.get("/addMember", controller.addMember);
+router.get("/addMember", controller.page_addMember);
+router.post("/addMember", controller.addMember);
 
 module.exports = router;

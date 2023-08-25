@@ -12,18 +12,17 @@
 <body>
     <h1>회원 정보 추가</h1>
     <a href="/">홈으로 이동</a>
-    <form name="form" onsubmit="addMem(event)">
-        <label for="name">이름: </label><input type="text" name="name">
-        <label for="gender">성별: </label>
+    <form name="form">
+        <label for="name">이름 </label><input type="text" name="name">
+        <label for="gender">성별 </label>
         <input type="checkbox" name="gender" value="남자"><label for="male">남자</label>
         <input type="checkbox" name="gender" value="여자"><label for="female">여자</label>
-        <label for="major">전공: </label><input type="text" name="major">
-        <button type="submit">등록</button>
+        <label for="major">전공 </label><input type="text" name="major">
+        <button type="button" onclick="addMem()">등록</button>
     </form>
 
     <script>
-        async function addMem(e) {
-            e.preventDefault();
+        async function addMem() {
             const form = document.forms['form'];
             const data = {
                 name: form.name.value,
@@ -31,13 +30,14 @@
                 major: form.major.value
             };
             try {
-                const result = await axios.post({
-                    url: '/memeber',
+                const result = await axios({
+                    method: "POST",
+                    url: '/addMember',
                     data
                 });
-                console.log("회원 정보가 추가되었습니다");
+                alert("회원 정보가 추가되었습니다");
             } catch (error) {
-                console.log(error)
+                console.log(error);
             }
         }
     </script>
