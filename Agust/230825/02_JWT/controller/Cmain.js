@@ -8,7 +8,6 @@ const cookieConfig = {
   httpOnly: true,
   maxAge: 60 * 1000, //1분
 };
-
 const SECRET = "mySecret";
 
 ///////////////////////////////////////
@@ -118,7 +117,7 @@ const post_signin = async (req, res) => {
       //비밀번호 일치
       res.cookie("isLoggin", true, cookieConfig);
       // req.session.userInfo = { name: user.name, id: user.id };
-      const token = jwt.sign({ id: user.id, name: user.name }, SECRET);
+      const token = jwt.sign({ id: user.id, name: user.str_id }, SECRET);
       res.json({ result: true, token, data: user });
     } else {
       //비밀번호 틀림
@@ -136,10 +135,28 @@ const edit_profile = (req, res) => {
   //     res.json({ result: true });
   // });
   //update( 수정될 정보를 객체형태로 입력, 수정될 곳 객체 입력  )
+  console.log(req.headers.authorization);
+  const [bearer, token] = req.headers.authorization.split(" ");
   const { name, pw, id } = req.body;
-  User.update({ name, pw }, { where: { id } }).then(() => {
-    res.json({ result: true });
-  });
+
+  if (bearer === "Bearer") {
+    //토큰인증
+    try {
+      const result = jwt.verify(token, SECRET);
+
+      const resultValue = User.findOne({ where: { id: result.id } });
+      console.log(result);
+    } catch (error) {
+      console.log(error);
+      res.json({ result: false });
+    }
+
+    // User.update({ name, pw }, { where: { id } }).then(() => {
+    //     res.json({ result: true });
+    // });
+  } else {
+    res.json({ result: false, message: "인증방식이 틀렸습니다." });
+  }
 };
 
 /////////////////////////////////////////////
