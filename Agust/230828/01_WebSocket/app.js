@@ -21,11 +21,14 @@ wss.on("connection", (socket) => {
   sockets.push(socket);
 
   socket.on("message", (message) => {
+    // 웹 소켓을 통해 클라이언트와 서버 간에 데이터를 주고받을 때는 일반적으로 문자열 또는 버퍼 형태로 전달된다.
+    // 서버가 모두 다른 환경이기 때문에 객체를 전달할 때는 객체를 일련의 byte로 변환하는 직렬화 과정이 필요함 → 버퍼를 쓰는 이유
     // msg: {user: 'any', message: 'any'}
     const msg = JSON.parse(message);
     console.log(`클라이언트로부터 받은 메시지: ${msg.message}`);
     // 클라이언트로 응답 메시지 전송
-    sockets.forEach((elem) => {
+    // sockets를 wss.clients로 변경 가능
+    wss.clients.forEach((elem) => {
       elem.send(`${msg.user}: ${msg.message}`);
     });
   });
