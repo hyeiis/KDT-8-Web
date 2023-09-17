@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>230712 실습</title>
+    <script>
+      console.log("------실습 1------");
+      let sum1 = (sum2 = sum3 = 0);
+      let numbers = [];
+      // 기본 for문
+      for (i = 1; i <= 100; i++) {
+        numbers.push(i);
+        sum1 += numbers[i - 1];
+      }
+      console.log("숫자 배열 : ", numbers);
+      console.log("기본 for문 : ", sum1);
+      // for-of문
+      for (let num of numbers) {
+        sum2 += num;
+      }
+      console.log("for-of문 : ", sum2);
+      //forEach 문
+      numbers.forEach((num) => {
+        sum3 += num;
+      });
+      console.log("forEach문 : ", sum3);
+
+      console.log("------실습 2------");
+      let fruits1 = [
+        "사과",
+        "딸기",
+        "파인애플",
+        "수박",
+        "참외",
+        "오렌지",
+        "자두",
+        "망고",
+      ];
+      let fruits2 = ["수박", "사과", "참외", "오렌지", "파인애플", "망고"];
+      //   let same = fruits1.filter((fruit) => fruits2.includes(fruit));
+      let same = [];
+      let diff = [];
+      fruits1.forEach((fruit) => {
+        if (fruits2.includes(fruit)) {
+          same.push(fruit);
+        } else diff.push(fruit);
+      });
+      console.log(same);
+      console.log(diff);
+    </script>
+  </head>
+  <body></body>
+</html>

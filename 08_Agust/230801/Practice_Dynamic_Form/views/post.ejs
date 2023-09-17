@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axios Post</title>
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <form>
+        <label for="userId">아이디</label>
+        <input type="text" id="userId" required>
+        <br>
+        <label for="userPassword">패스워드</label>
+        <input type="password" id="userPassword" required>
+        <br>
+        <button type="button" onclick="login()">로그인</button>
+    </form>
+
+    <div class="result">
+    </div>
+</body>
+
+<script>
+    const resultBox = document.querySelector(".result");
+
+    function login() {
+        console.log('axios post');
+        const data = {
+            userId: document.querySelector("#userId").value,
+            userPassword: document.querySelector("#userPassword").value
+        };
+        console.log(data);
+        axios({
+            method: 'POST',
+            url: '/axiosPostResult',
+            data
+        }).then((res) => {
+            console.log(res);
+            const { result, userInfo } = res.data;
+            if (result) {
+                resultBox.textContent = `${userInfo.userId}님 환영합니다.`;
+                resultBox.style.color = 'blue';
+            }
+            else {
+                resultBox.textContent = '아이디 또는 비밀번호가 틀렸습니다'
+                resultBox.style.color = 'red';
+            }
+        })
+    }
+</script>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원 전체 목록</title>
+</head>
+
+<body>
+    <h1>회원 리스트</h1>
+    <a href="/">홈으로 이동</a>
+    <h3>
+        <%= data.name %>님 환영합니다
+    </h3>
+    <ul style="list-style: none;">
+        <% for( let i=0; i < lists.length; i++ ) { %>
+            <li>
+                <b>
+                    <a href="/all_profile/<%= lists[i].id %>">
+                        <%= lists[i].name %>
+                    </a>
+                </b>
+            </li>
+            <% } %>
+    </ul>
+</body>
+
+</html>

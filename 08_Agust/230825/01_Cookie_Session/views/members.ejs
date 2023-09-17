@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>
+        <%= name %>님께서 접속중이십니다
+    </h3>
+    <h2></h2>
+    <a href="/">홈으로 이동</a>
+    <ul style="list-style: none;">
+        <% for( let i=0; i < result.length; i++ ) { %>
+            <li>
+                <b>
+                    <a href="/members/<%= lists[i].id %>">
+                        <%= result[i].name %>
+                    </a>
+                </b>
+            </li>
+            <% } %>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <title>회원가입</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>회원가입</legend>
+        <label for="id">아이디: </label>
+        <input type="text" name="id" id="id">
+        <br>
+        <label for="password">비밀번호: </label>
+        <input type="password" name="password" id="password">
+        <br>
+        <label for="name">이름: </label>
+        <input type="text" name="name" id="name">
+        <br>
+        <label for="age">나이: </label>
+        <input type="number" name="age" id="age">
+        <br>
+        <label for="profile">프로필 사진: </label>
+        <input type="file" name="profile" id="profile">
+        <br>
+        <button type="reset">리셋</button>
+        <button type="button" onclick="register()">회원가입</button>
+    </fieldset>
+
+    <script>
+        function register() {
+            const file = document.getElementById('profile');
+            const id = document.getElementById('id');
+
+            const formData = new FormData();
+            formData.append('id', id.value);
+            //* profile은 항상 id나 다른 것들보다 밑에 있어야 함
+            //* 위에 있으면 다른 것들을 읽지 않고 무시함 - multer에 명시되어있음
+            formData.append('profile', file.files[0]);
+
+            axios({
+                method: 'POST',
+                url: '/register',
+                data: formData,
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            }).then((res) => {
+                console.log("response", res);
+                // resultBox.innerHTML = `<div><img src=${res.data.path}></div>`;
+            });
+        }
+    </script>
+
+</body>
+
+</html>
