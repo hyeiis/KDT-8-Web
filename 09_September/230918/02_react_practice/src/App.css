@@ -1,0 +1,102 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 실습 3 */
+.test {
+  background-color: antiquewhite;
+  color: chocolate;
+  font-size: 50px;
+  text-align: center;
+}
+.input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* 실습 4 */
+.red {
+  display: flex;
+  float: left;
+  width: 30px;
+  height: 30px;
+  background-color: red;
+}
+.orange {
+  display: flex;
+  float: left;
+  width: 30px;
+  height: 60px;
+  background-color: orange;
+}
+.yellow {
+  display: flex;
+  float: left;
+  width: 30px;
+  height: 90px;
+  background-color: yellow;
+}
+.green {
+  display: flex;
+  float: left;
+  width: 30px;
+  height: 120px;
+  background-color: green;
+}
+.blue {
+  display: flex;
+  float: left;
+  width: 30px;
+  height: 150px;
+  background-color: blue;
+}
+.navy {
+  display: flex;
+  float: left;
+  width: 30px;
+  height: 180px;
+  background-color: navy;
+}
+.purple {
+  display: flex;
+  width: 30px;
+  height: 210px;
+  background-color: purple;
+}
