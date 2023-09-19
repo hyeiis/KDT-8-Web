@@ -1,0 +1,66 @@
+.parent {
+  position: relative;
+}
+.circle {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  position: absolute;
+}
+.eye {
+  border-radius: 50%;
+  position: absolute;
+}
+.eye1 {
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  top: 65px;
+  left: 65px;
+  z-index: 2;
+}
+.eye2 {
+  width: 15px;
+  height: 15px;
+  background-color: black;
+  top: 67px;
+  left: 66px;
+  z-index: 3;
+}
+.circle1 {
+  background-color: #9afaff;
+  top: 100px;
+  left: 225px;
+  z-index: 6;
+}
+.circle2 {
+  background-color: #84ff8d;
+  top: 95px;
+  left: 190px;
+  z-index: 4;
+}
+.circle3 {
+  background-color: #ffeb88;
+  top: 110px;
+  left: 140px;
+  z-index: 3;
+}
+.circle4 {
+  background-color: #ffb680;
+  top: 80px;
+  left: 105px;
+  z-index: 2;
+}
+.circle5 {
+  top: 50px;
+  left: 50px;
+  background-color: #ff7c7c;
+  z-index: 1;
+}
+.grass {
+  position: absolute;
+  width: 350px;
+  height: 75px;
+  z-index: 5;
+  top: 120px;
+}
