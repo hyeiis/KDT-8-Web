@@ -1,0 +1,19 @@
+.box {
+  border: 2px solid gray;
+  padding: 10px;
+}
+
+table,
+th,
+tr,
+td {
+  border: 2px solid black;
+  border-collapse: collapse;
+  empty-cells: hide;
+  padding: 7px;
+}
+
+table {
+  margin-top: 30px;
+  width: 480px;
+}
