@@ -8,7 +8,7 @@ th,
 tr,
 td {
   border: 2px solid black;
-  border-collapse: collapse;
+  border-collapse: collapse; /* 이중 테두리 x 또는 table에 cessSpacing={0}*/
   empty-cells: hide;
   padding: 7px;
 }

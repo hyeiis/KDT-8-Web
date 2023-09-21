@@ -2,7 +2,7 @@ import "./App.css";
 import ShowMessage from "./ShowMessage";
 import FontColor from "./FontColor";
 import DisplayNone from "./DisplayNone";
-import StateClass from "./StateClass";
+import Board from "./Board";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       {/* state와 setState */}
       <FontColor />
       <DisplayNone />
-      <StateClass />
+      <Board />
     </>
   );
 }
