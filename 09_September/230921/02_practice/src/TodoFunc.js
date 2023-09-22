@@ -1,17 +1,35 @@
 import { useState } from "react";
 
 export default function TodoFunc() {
-  const [todo, setTodo] = useState("");
-  const [list, setList] = useState([]);
+  const [todo, setTodo] = useState(""); // 입력 값
+  const [list, setList] = useState([]); // 할 일 목록
 
   const handleAdd = () => {
-    setList([...list, todo]);
-    setTodo("");
+    if (list.length >= 10) {
+      alert("할 일이 너무 많아요!");
+    }
+    if (todo !== "") {
+      const newTodo = {
+        id: Date.now(),
+        todo,
+        checked: false,
+      };
+      setList([...list, newTodo]);
+      setTodo("");
+    }
+  };
+
+  const toggleTodo = (id) => {
+    setList(
+      list.map((todo) => {
+        console.log(todo);
+        return todo.id === id ? { ...todo, checked: !todo.checked } : todo;
+      }),
+    );
   };
 
   const handleDeleteChecked = () => {
-    if (list.checked) {
-    }
+    setList(list.filter((todo) => todo.checked === false));
   };
   return (
     <>
@@ -28,15 +46,19 @@ export default function TodoFunc() {
         </button>
       </form>
       <ul style={{ listStyle: "none" }}>
-        {list.map((value, index) => {
-          if (list.length > 10) {
-            // alert("할 일이 너무 많아요!");
-          }
+        {list.map((todo) => {
           return (
-            <li>
-              <input type="checkbox" name="todoList" />
-              <label htmlFor={value}>
-                <b>{value}</b>
+            <li key={todo.id}>
+              <input
+                type="checkbox"
+                name="todoList"
+                checked={todo.checked}
+                onChange={() => {
+                  toggleTodo(todo.id);
+                }}
+              />
+              <label htmlFor={todo}>
+                <b>{todo.todo}</b>
               </label>
             </li>
           );
