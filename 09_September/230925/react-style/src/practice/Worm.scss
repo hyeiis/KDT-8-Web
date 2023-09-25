@@ -1,0 +1,47 @@
+@import "./_util.scss";
+
+.parent {
+  position: relative;
+  .circle {
+    @include circle(75px);
+    &.circle1 {
+      background-color: $color-blue;
+      @include position(100px, 225px, 6);
+    }
+    &.circle2 {
+      background-color: $color-green;
+      @include position(95px, 190px, 4);
+    }
+    &.circle3 {
+      background-color: $color-yellow;
+      @include position(110px, 140px, 3);
+    }
+    &.circle4 {
+      background-color: $color-orange;
+      @include position(80px, 105px, 2);
+    }
+    &.circle5 {
+      background-color: $color-red;
+      @include position(50px, 50px, 1);
+    }
+  }
+  .eye {
+    @include circle(25px);
+    &.eye1 {
+      background-color: $color-white;
+      @include position(65px, 65px, 2);
+    }
+    &.eye2 {
+      background-color: $color-black;
+      @include circle(15px);
+      @include position(67px, 66px, 3);
+    }
+  }
+  .grass {
+    position: absolute;
+    width: 350px;
+    height: 75px;
+    z-index: 5;
+    top: 120px;
+  }
+}

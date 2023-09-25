@@ -1,0 +1,17 @@
+// _utils.scss
+// Scss 파일명 앞에 _가 붙으면 파일 단위로 분리 되어 컴파일 되지 않는다 (= 컴파일 되지 않음)
+// → 컴파일 필요 없는 변수들을 넣어주면 됨
+
+$color-red: #f85858;
+$color-orange: #ffc14f;
+$color-yellow: #fcfc57;
+$color-green: #208b20;
+$color-blue: #4141f1;
+$color-navy: #1e1e7e;
+$color-purple: #af4aaf;
+
+// mixin
+@mixin box($size) {
+  width: $size;
+  height: $size;
+}
