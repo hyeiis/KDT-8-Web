@@ -1,0 +1,45 @@
+$color-red: #ff7c7c;
+$color-orange: #ffb680;
+$color-yellow: #ffeb88;
+$color-green: #84ff8d;
+$color-blue: #9afaff;
+$color-pink: #ff93d2;
+
+$color-black: black;
+$color-white: white;
+
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin position($top, $left, $idx) {
+  top: $top;
+  left: $left;
+  z-index: $idx;
+  position: absolute;
+}
+
+// 시계방향으로 움직이는 animation
+@mixin move($name, $px) {
+  @keyframes #{$name} {
+    0%,
+    100% {
+      top: 0;
+      left: 0;
+    }
+    25% {
+      top: 0;
+      left: $px;
+    }
+    50% {
+      top: $px;
+      left: $px;
+    }
+    75% {
+      top: $px;
+      left: 0;
+    }
+  }
+}

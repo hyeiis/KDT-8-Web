@@ -1,0 +1,21 @@
+@import "./_util.scss";
+
+.circle {
+  @include circle(30px);
+
+  &.pink {
+    background-color: $color-pink;
+    @include move(pinkAni, 100px);
+    animation: pinkAni 2s infinite;
+  }
+  &.yellow {
+    background-color: $color-yellow;
+    @include move(yellowAni, 200px);
+    animation: yellowAni 2s infinite;
+  }
+  &.green {
+    background-color: $color-green;
+    @include move(greenAni, 300px);
+    animation: greenAni 2s infinite;
+  }
+}
