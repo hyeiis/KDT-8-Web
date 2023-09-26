@@ -1,0 +1,22 @@
+@import "./_util.scss";
+
+.main {
+  @include header;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+span {
+  color: green;
+  font-weight: bold;
+}
+
+.name {
+  color: red;
+  font-weight: bold;
+}
+
+button {
+  width: fit-content;
+}

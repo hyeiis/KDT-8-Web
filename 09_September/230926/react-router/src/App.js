@@ -1,7 +1,8 @@
 import { Outlet } from "react-router-dom";
 import "./App.css";
 // import Router from "./Router";
-import Header from "./router/Header";
+// import Header from "./router/Header";
+import Router from "./practice/Router";
 
 function App() {
   return (
@@ -10,8 +11,12 @@ function App() {
       {/* <Router /> */}
 
       {/* ver 2 */}
-      <Header />
-      <Outlet />
+      {/* <Header />
+      <Outlet /> */}
+
+      {/* --------실습-------- */}
+      {/* ver 1 */}
+      <Router />
     </>
   );
 }

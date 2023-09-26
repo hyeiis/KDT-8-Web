@@ -1,0 +1,17 @@
+@import "./_util.scss";
+
+.header {
+  @include header;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+u {
+  display: flex;
+  list-style: none;
+
+  li {
+    padding: 5px;
+  }
+}

@@ -1,0 +1,7 @@
+$height: 80px;
+$color-beige: beige;
+
+@mixin header {
+  height: $height;
+  background-color: $color-beige;
+}
