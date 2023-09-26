@@ -2,6 +2,7 @@
 
 .circle {
   @include circle(30px);
+  position: relative;
 
   &.pink {
     background-color: $color-pink;
