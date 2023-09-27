@@ -1,8 +1,12 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  createBrowserRouter,
+} from "react-router-dom";
+import App from "../App";
 import NavBar from "./NavBar";
 import Student from "./Student";
-import CodingOn from "./Codingon";
-import SearchParams from "./SearchParams";
 
 // ver 1.
 export default function Router() {
@@ -11,9 +15,7 @@ export default function Router() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<NavBar />} />
-          <Route path="/student/kdt" element={<Student />} />
-          <Route path="/student/codingon" element={<CodingOn />} />
-          <Route path="/student/new" element={<SearchParams />} />
+          <Route path="/student/:name" element={<Student />} />
         </Routes>
       </BrowserRouter>
     </>
@@ -28,41 +30,25 @@ export default function Router() {
 //     children: [
 //       {
 //         path: "",
-//         element: <Home />,
-//         errorElement: <Error />,
+//         element: <NavBar />,
 //       },
 //       {
-//         path: "about",
-//         element: <About />,
-//       },
-//       {
-//         path: "redirect",
-//         element: <Redirect />,
-//       },
-//     ],
-//     errorElement: <NotFound />,
-//   },
-//   {
-//     path: "/user",
-//     element: <App />,
-//     children: [
-//       {
-//         path: "",
-//         element: <User />,
-//       },
-//       {
-//         path: ":userId",
-//         element: <UserDetail />,
+//         path: "student",
+//         element: <NavBar />,
 //         children: [
 //           {
-//             path: "comment",
-//             element: <Comment />,
+//             path: "/kdt",
+//             element: <Student />,
+//           },
+//           {
+//             path: "/codingon",
+//             element: <CodingOn />,
+//           },
+//           {
+//             path: "/new",
+//             element: <SearchParams />,
 //           },
 //         ],
-//       },
-//       {
-//         path: "redirect",
-//         element: <Redirect />,
 //       },
 //     ],
 //   },
