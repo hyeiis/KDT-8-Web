@@ -30,12 +30,10 @@ export default function AddList() {
   const [item, setItem] = useState("");
   const [list, setList] = useState([]);
   const handleAdd = () => {
-    const newItem = {
-      id: Date.now(),
-      item,
-    };
-    setList([...list, newItem]);
-    setItem("");
+    if (item !== "") {
+      setList([...list, item]);
+      setItem("");
+    }
   };
   return (
     <>
@@ -43,10 +41,10 @@ export default function AddList() {
       &nbsp;
       <Button onClick={handleAdd}>Add</Button>
       <List>
-        {list.map((item) => {
+        {list.map((item, idx) => {
           return (
-            <Item key={item.id}>
-              {item.item}
+            <Item key={idx}>
+              {item}
               <hr />
             </Item>
           );

@@ -17,8 +17,8 @@ function App() {
       {/* 실습! */}
       {/* <Worm /> */}
       <Circle />
-      {/* <ColorChange /> */}
-      {/* <AddList /> */}
+      <ColorChange />
+      <AddList />
     </>
   );
 }
