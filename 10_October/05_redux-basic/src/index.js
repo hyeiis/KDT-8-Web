@@ -73,7 +73,9 @@ const delTodo = (id) => {
 const todoReducer = (state = [], action) => {
   switch (action.type) {
     case ADD:
-      return [{ id: Date.now(), text: action.text }, ...state];
+      // return [{ id: Date.now(), text: action.text }, ...state];
+      const newTodo = { text: "???", id: 0 };
+      return [...state, newTodo];
     case DELETE:
       return state.filter((todo) => todo.id !== action.id);
     default:
@@ -109,11 +111,9 @@ const dispatchDeleteTodo = (e) => {
   todoStore.dispatch(delTodo(id));
 };
 
-const onSubmit = (e) => {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
   const todo = input.value;
   input.value = "";
   dispatchAddToDo(todo);
-};
-
-form.addEventListener("submit", onSubmit);
+});
