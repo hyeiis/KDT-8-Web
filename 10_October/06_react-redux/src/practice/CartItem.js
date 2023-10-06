@@ -1,12 +1,11 @@
-import { useContext } from "react";
-import CartContext from "../store/cart-context";
+import { useDispatch } from "react-redux";
+import { REMOVE_CART } from "../store/cart-store";
 
 export default function CartItem({ value }) {
-  const { cartList, setCartList } = useContext(CartContext);
+  const dispatch = useDispatch();
 
-  // filter를 사용하여 새로운 배열 반환
   const removeCart = (id) => {
-    setCartList(cartList.filter((element) => element.id !== id));
+    dispatch({ type: REMOVE_CART, id });
   };
 
   return (

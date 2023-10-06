@@ -1,6 +1,6 @@
-import { useContext } from "react";
-import "./scss/productList.scss";
-import CartContext from "../store/cart-context";
+import { useDispatch } from "react-redux";
+import { ADD_CART } from "../store/cart-store";
+import { useState } from "react";
 
 export default function ProductList() {
   const products = [
@@ -26,11 +26,19 @@ export default function ProductList() {
     },
   ];
 
-  // const item = useContext(CartContext);
-  const { cartList, setCartList } = useContext(CartContext); // 구조 분해 할당
+  const [cart, setCart] = useState([]);
+
+  // dispatch는 우리가 호출할 수 있는 함수
+  const dispatch = useDispatch();
 
   const addCart = (product) => {
-    setCartList([...cartList, product]);
+    dispatch({
+      type: ADD_CART,
+      id: product.id,
+      label: product.label,
+      price: product.price,
+    });
+    setCart([...cart, product]);
   };
 
   return (

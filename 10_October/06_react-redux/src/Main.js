@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { ADD_TODO, DELETE_TODO } from "./store/todoStore";
+import { ADD_TODO, DELETE_TODO } from "./store/todo-store";
 
 export default function Main() {
   const [text, setText] = useState("");

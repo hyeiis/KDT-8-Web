@@ -3,7 +3,9 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { Provider } from "react-redux";
-import store from "./store/todoStore";
+// import store from "./store/todo-store";
+// import store from "./store/cart-store.js";
+import store from "./store/toolkit-store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

@@ -1,8 +1,8 @@
 import { createStore } from "redux";
 
-const input = document.querySelector("input");
-const form = document.querySelector("form");
-const ul = document.querySelector("ul");
+// const input = document.querySelector("input");
+// const form = document.querySelector("form");
+// const ul = document.querySelector("ul");
 
 export const ADD_TODO = "ADD_TODO";
 export const DELETE_TODO = "DELETO_TODO";
