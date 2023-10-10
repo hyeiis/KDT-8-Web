@@ -3,7 +3,10 @@ import { useSelector } from "react-redux";
 
 export default function Cart() {
   const carts = useSelector((state) => state);
-  const totalPrice = carts.reduce((acc, val) => acc + val.price, 0);
+  const totalPrice = carts.reduce(
+    (acc, val) => acc + val.quantity * val.price,
+    0,
+  );
 
   return (
     <div>

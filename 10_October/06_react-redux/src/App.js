@@ -10,12 +10,12 @@ function App() {
   return (
     <>
       {/* <Main /> */}
-      <Login />
-      <Counter />
+      {/* <Login />
+      <Counter /> */}
 
       {/* 실습 */}
-      {/* <ProductList />
-      <Cart /> */}
+      <ProductList />
+      <Cart />
     </>
   );
 }

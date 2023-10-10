@@ -34,9 +34,10 @@ export default function ProductList() {
   const addCart = (product) => {
     dispatch({
       type: ADD_CART,
-      id: product.id,
-      label: product.label,
-      price: product.price,
+      product, //위의 products 배열의 객체 하나(product: product)
+      // id: product.id,
+      // label: product.label,
+      // price: product.price,
     });
     setCart([...cart, product]);
   };
