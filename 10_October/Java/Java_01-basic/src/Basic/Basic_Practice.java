@@ -1,3 +1,5 @@
+package Basic;
+
 import java.util.Scanner;
 
 public class Basic_Practice {
@@ -11,5 +13,6 @@ public class Basic_Practice {
         int age = scanner.nextInt();
 
         System.out.printf("안녕하세요! %s님 (%d 세)", name, age);
+        scanner.close();
     }
 }
