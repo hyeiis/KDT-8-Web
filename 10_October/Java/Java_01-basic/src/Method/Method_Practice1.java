@@ -2,7 +2,7 @@ package Method;
 
 import java.util.Scanner;
 
-public class Method_Practice {
+public class Method_Practice1 {
     public double add (int a, int b) {
         return a + b;
     }
@@ -19,7 +19,7 @@ public class Method_Practice {
     public static void main(String[] args) {
         System.out.println("숫자 두 개를 입력하세요");
         Scanner scanner = new Scanner(System.in);
-        Method_Practice  calc = new Method_Practice();
+        Method_Practice1 calc = new Method_Practice1();
 
         int a = scanner.nextInt();
         int b = scanner.nextInt();
