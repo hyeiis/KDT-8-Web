@@ -1,4 +1,4 @@
-package practice;
+package static_;
 
 import java.util.ArrayList;
 import java.util.Scanner;
