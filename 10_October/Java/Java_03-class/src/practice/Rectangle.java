@@ -5,10 +5,12 @@ import java.util.Scanner;
 
 public class Rectangle {
   private int width, height;
+  private static int num = 0;
 
   public Rectangle(int width) {
     this.width = width;
     this.height = getHeight();
+    num ++;
   }
 
   public static void main(String[] args) {
@@ -33,6 +35,7 @@ public class Rectangle {
       System.out.println("넓이는 " + rect.area());
       System.out.println("------------------------");
     }
+    System.out.println("Rectangle 인스턴스의 개수: " + num);
   }
 
   public int getWidth() {
