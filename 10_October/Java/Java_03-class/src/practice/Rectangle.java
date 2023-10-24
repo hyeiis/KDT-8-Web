@@ -12,6 +12,9 @@ public class Rectangle {
     this.height = getHeight();
     num ++;
   }
+  public static int getNum() {
+    return num;
+  }
 
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
@@ -35,7 +38,7 @@ public class Rectangle {
       System.out.println("넓이는 " + rect.area());
       System.out.println("------------------------");
     }
-    System.out.println("Rectangle 인스턴스의 개수: " + num);
+    System.out.println("Rectangle 인스턴스의 개수: " + Rectangle.getNum());
   }
 
   public int getWidth() {
