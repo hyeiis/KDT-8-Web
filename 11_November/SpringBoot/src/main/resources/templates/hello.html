@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+</head>
+<body>
+<div>Hello</div>
+<p th:text="${msg}"></p>
+<!--안녕하세요 hello-->
+<p th:text="'안녕하세요' + ${msg}"></p>
+
+<p th:utext="'안녕하세요' + ${msg}"></p>
+
+<input th:value="${msg}" />
+
+<p th:with="abc=${msg}" th:utext="${abc}"></p>
+
+<!--switch-case-->
+<div th:switch="${name}">
+    <p th:case="kim">kim</p>
+    <p th:case="lee">lee</p>
+    <p th:case="*">어느 것도 아님</p>
+</div>
+
+<!--if-else (unless)-->
+<p th:if="${name}=='kim'" th:text="${name}"></p>
+<p th:unless="${name}=='kim'">kim이 아님</p>
+
+<!--반복문 th:each-->
+<ul>
+    <li th:each="c:${coffee}" th:text="${c}" />
+</ul>
+</body>
+</html>
