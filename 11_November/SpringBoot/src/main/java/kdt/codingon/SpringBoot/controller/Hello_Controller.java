@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.ArrayList;
 
 @Controller
-public class HelloController {
+public class Hello_Controller {
   @GetMapping("/")
   public String getHello(Model model) {
     model.addAttribute("msg", "<strong>hello</strong>");
