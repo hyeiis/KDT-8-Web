@@ -1,6 +1,7 @@
 package kdt.codingon.SpringBoot._231031.controller;
 
 import kdt.codingon.SpringBoot._231031.dto.UserDTO;
+import kdt.codingon.SpringBoot._231031.vo.UserVO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -65,9 +66,38 @@ public class MainController {
   // ---- DTO ----
   @GetMapping("/dto/response1")
   @ResponseBody
-  public String dtoResponse1(@ModelAttribute UserDTO userDTO) {
-    // @ModelAttribute: html 폼 데이터를 컨트롤러로 전달할 때 사용
+  public String dtoAPI1(@ModelAttribute UserDTO userDTO) {
+    // get으로 받으면 url, post로 받으면 body에 있는 것들을 전달
+    // @ModelAttribute: html 폼 데이터를 컨트롤러로 전달할 때 사용. get이나 post 전송에서 사용
     String msg = userDTO.getName() + " " + userDTO.getAge() + "!!!";
+    return msg;
+  }
+  // 일반 폼 GET 방식 - DTO (@ModelAttribute) 전송 가능
+  // 일반 폼 GET 방식 = DTO (@RequestBody) 전송 불가 - 오류
+
+  @PostMapping("/dto/response2")
+  @ResponseBody
+  public String dtoAPI2(UserDTO userDTO) {
+    String msg = userDTO.getName() + " " + userDTO.getAge() + "!!!";
+    return msg;
+  }
+
+  @PostMapping("/dto/response3")
+  @ResponseBody
+  public String dtoAPI3(@RequestBody  UserDTO userDTO) {
+    // → 오류!
+    // @RequestBody: json 또는 xml 데이터 형식을 읽음
+    // 일반 폼 전송 시 데이터 형식은 기본 값으로 x-www-form-urlencoded
+    String msg = userDTO.getName() + " " + userDTO.getAge() + "!!!";
+    return msg;
+  }
+
+// ---- VO ----
+  @GetMapping("/vo/response1")
+  @ResponseBody
+  public String voAPI1(@ModelAttribute UserVO userVO) {
+    // set함수가 없으면 @ModelAttribute로 값 할당 못함 (set함수를 이용해 값 매핑함)
+    String msg = userVO.getName() + " " + userVO.getAge() + "!!!";
     return msg;
   }
 }
