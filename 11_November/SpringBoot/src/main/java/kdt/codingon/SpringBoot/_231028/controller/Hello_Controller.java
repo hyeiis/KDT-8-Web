@@ -1,4 +1,4 @@
-package kdt.codingon.SpringBoot.controller;
+package kdt.codingon.SpringBoot._231028.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,12 +20,12 @@ public class Hello_Controller {
     coffee.add("카푸치노");
     model.addAttribute("coffee", coffee);
 
-    return "hello";
+    return "231028/hello";
   }
 
   @GetMapping("/hello")
   public String getHello2() {
-    return "hello";
+    return "231028/hello";
   }
 }
 

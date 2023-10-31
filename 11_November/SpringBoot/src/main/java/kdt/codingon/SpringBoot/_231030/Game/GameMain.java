@@ -14,7 +14,7 @@ public class GameMain {
     // GameEngine engine = new GameEngine(game);
     // engine.run();
 
-    var context = new AnnotationConfigApplicationContext(GameConfiguration.class);
+    var context = new AnnotationConfigApplicationContext(GameMain.class);
     context.getBean(GameConsole.class).down();
     context.getBean(GameEngine.class).run();
   }

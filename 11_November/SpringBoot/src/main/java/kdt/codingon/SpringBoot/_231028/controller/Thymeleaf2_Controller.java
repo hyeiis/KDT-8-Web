@@ -1,4 +1,4 @@
-package kdt.codingon.SpringBoot.controller;
+package kdt.codingon.SpringBoot._231028.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +18,7 @@ public class Thymeleaf2_Controller {
     people.add(new Person("Jo", 28));
 
     model.addAttribute("people", people);
-    return "thymeleaf2";
+    return "231028/thymeleaf2";
   }
 
   static class Person {
