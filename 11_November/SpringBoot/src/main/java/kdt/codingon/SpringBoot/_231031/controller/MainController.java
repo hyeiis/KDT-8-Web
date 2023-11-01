@@ -63,7 +63,7 @@ public class MainController {
     return "231031/response"; // res.send 또는 res.json (해당 값 return)
   }
 
-  // ---- DTO ----
+  // ---- DTO ---- //
   @GetMapping("/dto/response1")
   @ResponseBody
   public String dtoAPI1(@ModelAttribute UserDTO userDTO) {
@@ -84,7 +84,7 @@ public class MainController {
 
   @PostMapping("/dto/response3")
   @ResponseBody
-  public String dtoAPI3(@RequestBody  UserDTO userDTO) {
+  public String dtoAPI3(@RequestBody UserDTO userDTO) {
     // → 오류!
     // @RequestBody: json 또는 xml 데이터 형식을 읽음
     // 일반 폼 전송 시 데이터 형식은 기본 값으로 x-www-form-urlencoded
@@ -92,12 +92,71 @@ public class MainController {
     return msg;
   }
 
-// ---- VO ----
+  // ---- VO ---- //
   @GetMapping("/vo/response1")
   @ResponseBody
   public String voAPI1(@ModelAttribute UserVO userVO) {
     // set함수가 없으면 @ModelAttribute로 값 할당 못함 (set함수를 이용해 값 매핑함)
     String msg = userVO.getName() + " " + userVO.getAge() + "!!!";
+    return msg;
+  }
+
+  // ---- axios ---- //
+  @GetMapping("/axios/response1") // 값 리턴 o
+  @ResponseBody
+  public String axiosResponse1(@RequestParam String name, @RequestParam String age) {
+    String msg = "이름: " + name + ", 나이: " + age;
+    return msg;
+  }
+  @GetMapping("/axios/response2") // 값 리턴 o
+  @ResponseBody
+  public String axiosResponse2(UserDTO userDTO) {
+    String msg = "이름: " + userDTO.getName() + ", 나이: " + userDTO.getAge();
+    return msg;
+  }
+
+  @PostMapping("/axios/response3") // 값 리턴 x
+  @ResponseBody
+  // @RequestParam required 기본 값: true
+  // axios로 값을 전달하게 될 경우, 파라미터로 값이 들어오지 않는데 (post로 보냈을 때), @RequestParam의 required가 기본값이 true이기 때문에 오류가 남
+  public String axiosResponse3(@RequestParam String name, @RequestParam String age) {
+    String msg = "이름: " + name + ", 나이: " + age;
+    return msg;
+  }
+  @PostMapping("/axios/response4") // null 리턴
+  @ResponseBody
+  public String axiosResponse4(UserDTO userDTO) {
+    String msg = "이름: " + userDTO.getName() + ", 나이: " + userDTO.getAge();
+    return msg;
+  }
+  @PostMapping("/axios/response5") // 값 리턴 o
+  @ResponseBody
+  public String axiosResponse5(@RequestBody UserDTO userDTO) {
+    String msg = "이름: " + userDTO.getName() + ", 나이: " + userDTO.getAge();
+    return msg;
+  }
+
+  @GetMapping("/axios/vo/response2") // null 리턴
+  @ResponseBody
+  // @ModelAttribute로 값이 들어갈 때는 setter 함수를 실행해서 값을 넣어주기 떄문에 setter함구가 없는 UserVO에는 값이 들어갈 수 없다 (null)
+  public String axiosVoResponse2(UserVO userVO) {
+    String msg = "이름: " + userVO.getName() + ", 나이: " + userVO.getAge();
+    return msg;
+  }
+
+  @PostMapping("/axios/vo/response4") // null 리턴
+  @ResponseBody
+  public String axiosVoResponse4(UserVO userVO) {
+    String msg = "이름: " + userVO.getName() + ", 나이: " + userVO.getAge();
+    return msg;
+  }
+  @PostMapping("/axios/vo/response5") // 값 리턴 o
+  @ResponseBody
+  public String axiosVoResponse5(@RequestBody UserVO userVO) {
+    // @RequestBody로 값을 전달할 때 userVO에 setter 함수가 없어도 값이 들어간다
+    // @RequestBody는 setter 함수 실행이 아니라 각각의 필드(변수)에 직접적으로 값을 주입하면서 매핑
+    // @ModelAttribute가 setter 함수를 실행해 값을 넣어준다면 @RequesetBody는 각각의 필드(변수)에 직접적으로 값을 주입한다 → 필드에 내장된 set 함수 실행해서 값 주입
+    String msg = "이름: " + userVO.getName() + ", 나이: " + userVO.getAge();
     return msg;
   }
 }

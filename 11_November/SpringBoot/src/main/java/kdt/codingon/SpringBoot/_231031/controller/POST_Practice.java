@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class POST_Practice {
-  @GetMapping("/info")
-  public String main() {
-    return "231031/info";
-  }
+  // @GetMapping("/info")
+  // public String main() {
+  //   return "231031/info";
+  // }
   @PostMapping("/info/post_response")
   public String getInfo(@RequestParam  String name, @RequestParam String gender, @RequestParam  String birth, @RequestParam  String interest, Model model) {
     model.addAttribute("name", name);
