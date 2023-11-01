@@ -10,6 +10,9 @@ public class UserCommandRun  implements CommandLineRunner {
   private  UserJDBCRepository user;
   @Override
   public void run(String... args) throws Exception {
-    user.insert();
+    user.insert(new Users(1, "gildong", "seoul"));
+    user.insert(new Users(2, "harry", "seoul"));
+
+    user.deleteUser(1);
   }
 }

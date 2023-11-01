@@ -10,9 +10,17 @@ public class UserJDBCRepository {
   private JdbcTemplate jdbc;
   private static String INSERT_USER =
       """
-        INSERT INTO users (id, name, address) VALUES (1, 'gildong', 'seoul');
+        INSERT INTO users (id, name, address) VALUES (?, ?, ?);
       """;
-  public void insert() {
-    jdbc.update(INSERT_USER);
+  private static String DELETE_USER =
+      """
+       DELETE FROM users WHERE id = ?; 
+      """;
+
+  public void insert(Users users) {
+    jdbc.update(INSERT_USER, users.getId(), users.getName(), users.getAddress());
+  }
+  public void deleteUser(long id) {
+    jdbc.update(DELETE_USER, id);
   }
 }
