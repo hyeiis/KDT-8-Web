@@ -1,9 +1,12 @@
 package kdt.codingon.springboot.jdbc;
 
+import org.springframework.context.annotation.Bean;
+
 public class Users {
   private long id;
   private String name;
   private String address;
+  public Users() {}
 
   public Users(long id, String name, String address) {
     this.id = id;

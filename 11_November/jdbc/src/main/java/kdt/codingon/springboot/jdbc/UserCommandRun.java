@@ -12,7 +12,10 @@ public class UserCommandRun  implements CommandLineRunner {
   public void run(String... args) throws Exception {
     user.insert(new Users(1, "gildong", "seoul"));
     user.insert(new Users(2, "harry", "seoul"));
+    user.insert(new Users(3, "john", "seoul"));
+    user.insert(new Users(4, "jane", "seoul"));
 
-    user.deleteUser(1);
+    user.deleteUser(2);
+    System.out.println(user.findUser(3));
   }
 }
