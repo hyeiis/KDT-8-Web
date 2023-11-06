@@ -1,7 +1,7 @@
 package com.jpa.crud.board.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import com.jpa.crud.board.domain.BoardEntity;
+import com.jpa.crud.board.entity.BoardEntity;
 import com.jpa.crud.board.dto.BoardDTO;
 import com.jpa.crud.board.repository.BoardRepository;
 import org.springframework.stereotype.Service;

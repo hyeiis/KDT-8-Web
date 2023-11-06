@@ -1,6 +1,6 @@
 package com.jpa.crud.board.repository;
 
-import com.jpa.crud.board.domain.BoardEntity;
+import com.jpa.crud.board.entity.BoardEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

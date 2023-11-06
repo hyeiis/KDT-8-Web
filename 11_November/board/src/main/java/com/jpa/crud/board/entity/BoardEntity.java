@@ -1,4 +1,4 @@
-package com.jpa.crud.board.domain;
+package com.jpa.crud.board.entity;
 
 
 import jakarta.persistence.*;
@@ -25,21 +25,6 @@ public class BoardEntity {
   @UpdateTimestamp
   private LocalDateTime updateAt;
 
-  public LocalDateTime getCreateAt() {
-    return createAt;
-  }
-
-  public void setCreateAt(LocalDateTime createAt) {
-    this.createAt = createAt;
-  }
-
-  public LocalDateTime getUpdateAt() {
-    return updateAt;
-  }
-
-  public void setUpdateAt(LocalDateTime updateAt) {
-    this.updateAt = updateAt;
-  }
 
   public String getAuthor() {
     return author;
@@ -51,10 +36,6 @@ public class BoardEntity {
 
   public int getId() {
     return id;
-  }
-
-  public void setId(int id) {
-    this.id = id;
   }
 
   public String getTitle() {
