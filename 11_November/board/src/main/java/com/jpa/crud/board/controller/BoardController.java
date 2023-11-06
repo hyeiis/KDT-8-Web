@@ -1,7 +1,7 @@
-package com.mybatis.mybatis.controller;
+package com.jpa.crud.board.controller;
 
-import com.mybatis.mybatis.dto.BoardDTO;
-import com.mybatis.mybatis.service.BoardService;
+import com.jpa.crud.board.dto.BoardDTO;
+import com.jpa.crud.board.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -32,5 +32,12 @@ public class BoardController {
   @ResponseBody
   public boolean boardUpdate(@RequestBody BoardDTO boardDTO) {
     return boardService.updateBoard(boardDTO);
+  }
+
+  // 게시물 삭제
+  @DeleteMapping("/delete")
+  @ResponseBody
+  public boolean boardDelete(@RequestBody BoardDTO boardDTO) {
+    return boardService.deleteBoard(boardDTO);
   }
 }
