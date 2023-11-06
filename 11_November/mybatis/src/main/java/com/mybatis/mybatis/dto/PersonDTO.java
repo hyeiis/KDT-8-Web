@@ -1,10 +1,6 @@
 package com.mybatis.mybatis.dto;
 
 public class PersonDTO {
-  public void setId(int id) {
-    this.id = id;
-  }
-
   private int id;
   private String userid;
   private String password;
@@ -12,6 +8,10 @@ public class PersonDTO {
 
   public int getId() {
     return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
   }
 
   public String getUserid() {
