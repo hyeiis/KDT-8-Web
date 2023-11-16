@@ -8,4 +8,4 @@ ENV MYSQL_ROOT_PASSWORD=1234
 # 이미지에서 사용할 환경변수
 
 EXPOSE 3306
-# PORT 변호
+# 이미지에서 사용하는 포트
